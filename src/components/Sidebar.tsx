@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import SidebarProjects from './SidebarProjects'
 
 export default function Sidebar() {
@@ -16,21 +17,21 @@ export default function Sidebar() {
             <h2>Menu</h2>
           </header>
           <ul>
-            <li><a href="/">Homepage</a></li>
-            <li><a href="/services">Services</a></li>
-            <li><a href="/certificates">Certificates</a></li>
+            <li><Link href="/">Homepage</Link></li>
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/certificates">Certificates</Link></li>
             <li>
               <span className="opener">More..</span>
               <ul>
-                <li><a href="/about">About me</a></li>
-                <li><a href="/opportunities">Opportunities</a></li>
-                <li><a href="/clients">Clients</a></li>
-                <li><a href="/models">3D Models</a></li>
-                <li><a href="/projects">Projects</a></li>
+                <li><Link href="/about">About me</Link></li>
+                <li><Link href="/opportunities">Opportunities</Link></li>
+                <li><Link href="/clients">Clients</Link></li>
+                <li><Link href="/models">3D Models</Link></li>
+                <li><Link href="/projects">Projects</Link></li>
               </ul>
             </li>
-            <li><a href="/resume">Resume</a></li>
-            <li><a href="/contact">Contact</a></li>
+            <li><Link href="/resume">Resume</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
             <li>
               <span className="opener">My projects</span>
               <ul>
@@ -47,8 +48,8 @@ export default function Sidebar() {
                 <li><a href="https://google-login-edu.raimonvibe.com/" target="_blank">Google Login EDU</a></li>
               </ul>
             </li>
-            <li><a href="/legalnotice">Legalnotice</a></li>
-            <li><a href="/privacynotice">Privacynotice</a></li>
+            <li><Link href="/legalnotice">Legalnotice</Link></li>
+            <li><Link href="/privacynotice">Privacynotice</Link></li>
           </ul>
         </nav>
 
