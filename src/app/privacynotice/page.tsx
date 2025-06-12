@@ -26,11 +26,11 @@ export default function PrivacyNotice() {
     <div id="wrapper">
       <div id="main">
         <div className="inner">
-          <Header title="Privacy Notice" />
+          <Header />
           
           <section>
             <header className="main">
-              <h1>Privacy Statement</h1>
+              <h1>raimonvibe</h1>
             </header>
             
             <p>

@@ -26,7 +26,7 @@ export default function LegalNotice() {
     <div id="wrapper">
       <div id="main">
         <div className="inner">
-          <Header title="Legal Notice" />
+          <Header />
           
           <section>
             <header className="main">

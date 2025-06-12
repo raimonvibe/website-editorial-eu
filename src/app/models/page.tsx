@@ -28,11 +28,11 @@ export default function Models() {
     <div id="wrapper">
       <div id="main">
         <div className="inner">
-          <Header title="3D Models" />
+          <Header />
           
           <section>
             <header className="main">
-              <h1>3D Models</h1>
+              <h1>raimonvibe</h1>
             </header>
             
             <div className="posts">
