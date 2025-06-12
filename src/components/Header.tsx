@@ -1,11 +1,16 @@
 import React from 'react'
+import Link from 'next/link'
 
-export default function Header() {
+interface HeaderProps {
+  title?: string;
+}
+
+export default function Header({ title = "Raimonvibe" }: HeaderProps) {
   return (
     <header id="header">
-      <a href="/" className="logo">
-        <strong>Raimonvibe</strong> by Raimon
-      </a>
+      <Link href="/" className="logo">
+        <strong>{title}</strong> by Raimon
+      </Link>
       <ul className="icons">
         <li>
           <a 
