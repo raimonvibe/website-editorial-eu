@@ -5,7 +5,20 @@ import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
   title: 'Legal Notice - Raimonvibe',
-  description: 'Legal notice and terms of use for the Raimonvibe website.',
+  description: 'Legal notice, terms of use, and liability information for Raimonvibe website.',
+  keywords: 'legal notice, terms of use, liability, disclaimer, Raimonvibe',
+  openGraph: {
+    title: 'Legal Notice - Raimonvibe',
+    description: 'Legal notice, terms of use, and liability information for Raimonvibe website.',
+    url: 'https://www.raimonvibe.com/legalnotice',
+    siteName: 'Raimonvibe',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary',
+    title: 'Legal Notice - Raimonvibe',
+    description: 'Legal notice, terms of use, and liability information for Raimonvibe website.',
+  },
 }
 
 export default function LegalNotice() {
@@ -17,41 +30,30 @@ export default function LegalNotice() {
           
           <section>
             <header className="main">
-              <h1>Legal Notice</h1>
+              <h1>raimonvibe</h1>
             </header>
-            
-            <h2>Information according to § 5 TMG</h2>
-            <p>
-              Raimon Vibe<br />
-              Technical Researcher<br />
-              Netherlands
-            </p>
-            
-            <h2>Contact</h2>
-            <p>
-              Email: Available on contact page<br />
-              Website: https://raimonvibe.eu
-            </p>
-            
-            <h2>Disclaimer</h2>
-            <h3>Liability for Contents</h3>
-            <p>
-              As service providers, we are liable for own contents of these websites according to Sec. 7, Para. 1 German Telemedia Act (TMG). However, according to Sec. 8 to 10 German Telemedia Act (TMG), service providers are not under obligation to permanently monitor submitted or stored information or to search for evidences that indicate illegal activities.
-            </p>
-            
-            <h3>Liability for Links</h3>
-            <p>
-              Our offer includes links to external third party websites. We have no influence on the contents of those websites, therefore we cannot guarantee for those contents. Providers or administrators of linked websites are always responsible for their own contents.
-            </p>
-            
-            <h3>Copyright</h3>
-            <p>
-              Contents and compilations published on these websites by the providers are subject to German copyright laws. Reproduction, editing, distribution as well as the use of any kind outside the scope of the copyright law require a written permission of the author or originator.
-            </p>
+
+            <p>Last updated: October, 2024</p>
+            <p>Welcome to raimonvibe. By using our website, you agree to the terms and conditions set out in this legal notice.</p>
+            <p>Please read the legal notice carefully before using our website. If you have any questions, please contact us.</p>
+
+            <h2>Legal Notice</h2>
+            <p>The information on this website is intended for general information purposes only. While we endeavor to ensure that the information on this website is accurate and up-to-date, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability, or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose. Any reliance you place on such information is therefore strictly at your own risk.</p>
+            <p>Raimonvibe cannot be held liable for any loss or damage, including without limitation, direct or indirect, consequential or incidental damages, arising from or in connection with the use of this website.</p>
+            <p>This website may contain links to third-party websites that are not under the control of Raimonvibe. We have no control over the nature, content, and availability of those sites, and the inclusion of any links does not necessarily imply an endorsement or recommendation of the views expressed within them.</p>
+            <p>We strive to keep this website running smoothly. However, Raimonvibe takes no responsibility for, and will not be liable for, the website being temporarily unavailable due to technical issues beyond our control.</p>
+
+            <h3>Contact us:</h3>
+            <p>Email: <a href="mailto:info@raimonvibe.com">info@raimonvibe.com</a></p>
+            <p>Website: <a href="https://raimonvibe.com">https://raimonvibe.com</a></p>
+
+            <p>By using our website, you accept our terms of use and privacy policy. The information on this website is intended for general information purposes and is not intended as legal advice. We do not guarantee the accuracy, completeness, or reliability of any information on this website and will not be liable for any errors or omissions.</p>
+            <p>Copyright © 2025 raimonvibe. All rights reserved.</p>
           </section>
         </div>
       </div>
       <Sidebar />
+      <Footer />
     </div>
   )
 }
