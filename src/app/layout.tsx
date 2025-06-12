@@ -1,8 +1,19 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import '../styles/globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
+const openSans = Open_Sans({ 
+  subsets: ['latin'],
+  weight: ['400', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-open-sans'
+})
+
+const robotoSlab = Roboto_Slab({
+  subsets: ['latin'], 
+  weight: ['400', '700'],
+  variable: '--font-roboto-slab'
+})
 
 export const metadata: Metadata = {
   title: 'Raimonvibe Editorial',
@@ -54,7 +65,7 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body className={inter.className}>{children}</body>
+      <body className={`${openSans.variable} ${robotoSlab.variable}`}>{children}</body>
     </html>
   )
 }
