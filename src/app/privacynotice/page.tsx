@@ -100,7 +100,6 @@ export default function PrivacyNotice() {
         </div>
       </div>
       <Sidebar />
-      <Footer />
     </div>
   )
 }
