@@ -3,14 +3,17 @@ import { useState, useEffect, useCallback } from 'react';
 import { useBreakpoints } from './useBreakpoints';
 
 export const useSidebar = () => {
-  const [isInactive, setIsInactive] = useState(false);
+  const [isInactive, setIsInactive] = useState(true);
   const { isActive } = useBreakpoints();
 
   useEffect(() => {
-    if (isActive('<=large')) {
-      setIsInactive(true);
-    } else {
+    if (isActive('>large')) {
       setIsInactive(false);
+    } else {
+      if (!isInactive) {
+        return;
+      }
+      setIsInactive(true);
     }
   }, [isActive]);
 
