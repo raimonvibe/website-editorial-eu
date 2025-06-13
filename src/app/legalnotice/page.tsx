@@ -53,7 +53,6 @@ export default function LegalNotice() {
         </div>
       </div>
       <Sidebar />
-      <Footer />
     </div>
   )
 }
