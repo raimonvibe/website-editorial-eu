@@ -1,10 +1,37 @@
+'use client';
 import React from 'react'
 import Link from 'next/link'
+import { useSidebar } from '../hooks/useSidebar'
+import { useBreakpoints } from '../hooks/useBreakpoints'
 import SidebarProjects from './SidebarProjects'
 
 export default function Sidebar() {
+  const { isInactive, toggleSidebar } = useSidebar();
+  const { isActive } = useBreakpoints();
+
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
+    if (isActive('<=large')) {
+      const href = event.currentTarget.getAttribute('href');
+      if (href && href !== '#' && href !== '') {
+        setTimeout(() => {
+          window.location.href = href;
+        }, 500);
+      }
+    }
+  };
+
+  const handleSidebarClick = (event: React.MouseEvent) => {
+    if (isActive('<=large')) {
+      event.stopPropagation();
+    }
+  };
+
   return (
-    <div id="sidebar">
+    <div 
+      id="sidebar" 
+      className={isInactive ? 'inactive' : ''}
+      onClick={handleSidebarClick}
+    >
       <div className="inner">
         <section id="search" className="alt">
           <form method="post" action="#">
@@ -17,21 +44,21 @@ export default function Sidebar() {
             <h2>Menu</h2>
           </header>
           <ul>
-            <li><Link href="/">Homepage</Link></li>
-            <li><Link href="/services">Services</Link></li>
-            <li><Link href="/certificates">Certificates</Link></li>
+            <li><Link href="/" onClick={handleLinkClick}>Homepage</Link></li>
+            <li><Link href="/services" onClick={handleLinkClick}>Services</Link></li>
+            <li><Link href="/certificates" onClick={handleLinkClick}>Certificates</Link></li>
             <li>
               <span className="opener">More..</span>
               <ul>
-                <li><Link href="/about">About me</Link></li>
-                <li><Link href="/opportunities">Opportunities</Link></li>
-                <li><Link href="/clients">Clients</Link></li>
-                <li><Link href="/models">3D Models</Link></li>
-                <li><Link href="/projects">Projects</Link></li>
+                <li><Link href="/about" onClick={handleLinkClick}>About me</Link></li>
+                <li><Link href="/opportunities" onClick={handleLinkClick}>Opportunities</Link></li>
+                <li><Link href="/clients" onClick={handleLinkClick}>Clients</Link></li>
+                <li><Link href="/models" onClick={handleLinkClick}>3D Models</Link></li>
+                <li><Link href="/projects" onClick={handleLinkClick}>Projects</Link></li>
               </ul>
             </li>
-            <li><Link href="/resume">Resume</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/resume" onClick={handleLinkClick}>Resume</Link></li>
+            <li><Link href="/contact" onClick={handleLinkClick}>Contact</Link></li>
             <li>
               <span className="opener">My projects</span>
               <ul>
@@ -48,13 +75,25 @@ export default function Sidebar() {
                 <li><a href="https://google-login-edu.raimonvibe.com/" target="_blank">Google Login EDU</a></li>
               </ul>
             </li>
-            <li><Link href="/legalnotice">Legalnotice</Link></li>
-            <li><Link href="/privacynotice">Privacynotice</Link></li>
+            <li><Link href="/legalnotice" onClick={handleLinkClick}>Legalnotice</Link></li>
+            <li><Link href="/privacynotice" onClick={handleLinkClick}>Privacynotice</Link></li>
           </ul>
         </nav>
 
         <SidebarProjects />
       </div>
+
+      <a 
+        href="#sidebar" 
+        className="toggle"
+        onClick={(e) => {
+          e.preventDefault();
+          e.stopPropagation();
+          toggleSidebar();
+        }}
+      >
+        Toggle
+      </a>
     </div>
   )
 }

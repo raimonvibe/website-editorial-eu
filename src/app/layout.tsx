@@ -65,7 +65,22 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body className={`${openSans.variable} ${robotoSlab.variable}`}>{children}</body>
+      <body className={`${openSans.variable} ${robotoSlab.variable} is-preload`}>
+        <div id="wrapper">
+          {children}
+        </div>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('load', function() {
+                setTimeout(function() {
+                  document.body.classList.remove('is-preload');
+                }, 100);
+              });
+            `
+          }}
+        />
+      </body>
     </html>
   )
 }
