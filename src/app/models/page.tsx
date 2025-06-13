@@ -196,7 +196,6 @@ export default function Models() {
         </div>
       </div>
       <Sidebar />
-      <Footer />
     </div>
   )
 }
