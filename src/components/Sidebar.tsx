@@ -92,7 +92,7 @@ export default function Sidebar() {
           toggleSidebar();
         }}
       >
-        Toggle
+        <span className="sr-only">Toggle Menu</span>
       </a>
     </div>
   )
