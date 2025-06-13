@@ -92,7 +92,7 @@ export default function Sidebar() {
           toggleSidebar();
         }}
       >
-        <span className="sr-only">Toggle Menu</span>
+        <span style={{ fontSize: '1.5rem' }}>☰</span>
       </a>
     </div>
   )
