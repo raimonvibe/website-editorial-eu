@@ -38,7 +38,7 @@ export default function Models() {
             <div className="posts">
               <article>
                 <a href="https://cults3d.com/en/users/raimonvibe/3d-models" className="image">
-                  <Image src="/images/love.webp" alt="Personalized 3D earrings with custom design" width={400} height={300} />
+                  <Image src="/images/cults.png" alt="Personalized 3D earrings with custom design" width={400} height={300} />
                 </a>
                 <h3>Personalized 3D Earrings</h3>
                 <p>
