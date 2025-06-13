@@ -1,5 +1,5 @@
 'use client';
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { useSidebar } from '../hooks/useSidebar'
 import { useBreakpoints } from '../hooks/useBreakpoints'
@@ -8,6 +8,7 @@ import SidebarProjects from './SidebarProjects'
 export default function Sidebar() {
   const { isInactive, toggleSidebar } = useSidebar();
   const { isActive } = useBreakpoints();
+  const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
 
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (isActive('<=large')) {
@@ -24,6 +25,18 @@ export default function Sidebar() {
     if (isActive('<=large')) {
       event.stopPropagation();
     }
+  };
+
+  const handleDropdownToggle = (dropdownName: string) => {
+    setOpenDropdowns(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(dropdownName)) {
+        newSet.delete(dropdownName);
+      } else {
+        newSet.add(dropdownName);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -48,7 +61,13 @@ export default function Sidebar() {
             <li><Link href="/services" onClick={handleLinkClick}>Services</Link></li>
             <li><Link href="/certificates" onClick={handleLinkClick}>Certificates</Link></li>
             <li>
-              <span className="opener">More..</span>
+              <span 
+                className={`opener ${openDropdowns.has('more') ? 'active' : ''}`}
+                onClick={() => handleDropdownToggle('more')}
+                style={{ cursor: 'pointer' }}
+              >
+                More..
+              </span>
               <ul>
                 <li><Link href="/about" onClick={handleLinkClick}>About me</Link></li>
                 <li><Link href="/opportunities" onClick={handleLinkClick}>Opportunities</Link></li>
@@ -60,7 +79,13 @@ export default function Sidebar() {
             <li><Link href="/resume" onClick={handleLinkClick}>Resume</Link></li>
             <li><Link href="/contact" onClick={handleLinkClick}>Contact</Link></li>
             <li>
-              <span className="opener">My projects</span>
+              <span 
+                className={`opener ${openDropdowns.has('projects') ? 'active' : ''}`}
+                onClick={() => handleDropdownToggle('projects')}
+                style={{ cursor: 'pointer' }}
+              >
+                My projects
+              </span>
               <ul>
                 <li><a href="https://skills-hub.raimonvibe.com/" target="_blank">SkillsHub</a></li>
                 <li><a href="https://code-review.raimonvibe.com/" target="_blank">Code Review</a></li>
