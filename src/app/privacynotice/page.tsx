@@ -44,7 +44,6 @@ export default function PrivacyNotice() {
               <strong>Name:</strong> Raimon<br />
               <strong>Address:</strong> Timpaan 1-B<br />
               <strong>Postal code and city:</strong> 1628 MT Hoorn<br />
-              <strong>Phone number:</strong> +31 6 12345678<br />
               <strong>Email address:</strong> <a href="mailto:info@raimonvibe.com">info@raimonvibe.com</a>
             </p>
 
