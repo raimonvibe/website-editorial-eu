@@ -1,10 +1,12 @@
 'use client';
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useTheme } from '../contexts/ThemeContext'
 
 import SidebarProjects from './SidebarProjects'
 
 export default function Sidebar() {
+  const { resolvedTheme } = useTheme()
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
 
   useEffect(() => {
@@ -52,7 +54,7 @@ export default function Sidebar() {
   return (
     <div 
       id="sidebar" 
-      className="inactive"
+      className={`inactive ${resolvedTheme === 'dark' ? 'dark-theme' : 'light-theme'}`}
       onClick={handleSidebarClick}
     >
       <div className="inner">
