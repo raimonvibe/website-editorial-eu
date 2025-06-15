@@ -42,53 +42,51 @@ export default function Sidebar() {
   const handleToggleClick = (event: React.MouseEvent) => {
     event.preventDefault();
     event.stopPropagation();
+    console.log('Toggle button clicked');
     toggleSidebar();
   };
 
   useEffect(() => {
-    const toggleButton = toggleButtonRef.current;
-    if (!toggleButton) return;
-
-    const handleClick = (event: Event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      console.log('Direct event listener triggered - toggling sidebar');
-      toggleSidebar();
-    };
-
-    toggleButton.onclick = null;
+    const $ = require('jquery');
+    const $sidebar = $('#sidebar');
     
-    toggleButton.addEventListener('mousedown', handleClick, true);
+    $sidebar.find('a').off('click.sidebar').on('click.sidebar', function(this: HTMLElement, event: any) {
+      if (isActive('<=large')) {
+        const href = $(this).attr('href');
+        const target = $(this).attr('target');
+        
+        if (!href || href === '#' || href === '') {
+          return;
+        }
+        
+        event.preventDefault();
+        event.stopPropagation();
+        
+        $sidebar.addClass('inactive');
+        
+        setTimeout(() => {
+          if (target === '_blank') {
+            window.open(href);
+          } else {
+            window.location.href = href;
+          }
+        }, 500);
+      }
+    });
 
     return () => {
-      toggleButton.removeEventListener('mousedown', handleClick, true);
+      $sidebar.find('a').off('click.sidebar');
     };
-  }, [toggleSidebar]);
+  }, [isActive]);
 
-  useEffect(() => {
-    console.log('isInactive state changed to:', isInactive);
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar) {
-      const newTransform = isInactive ? 'translateX(-100%)' : 'translateX(0)';
-      sidebar.style.transform = newTransform;
-      sidebar.style.transition = 'transform 0.5s ease';
-      sidebar.className = isInactive ? 'inactive' : '';
-      console.log('Forced sidebar transform to:', newTransform);
-      
-      sidebar.offsetHeight;
-    }
-  }, [isInactive]);
 
-  console.log('Sidebar render - isInactive:', isInactive, 'transform:', isInactive ? 'translateX(-100%)' : 'translateX(0)');
-  
+
+
+
   return (
     <div 
       id="sidebar" 
-      className={isInactive ? 'inactive' : ''}
-      style={{
-        transform: isInactive ? 'translateX(-100%)' : 'translateX(0)',
-        transition: 'transform 0.5s ease'
-      }}
+      className="inactive"
       onClick={handleSidebarClick}
     >
       <div className="inner">

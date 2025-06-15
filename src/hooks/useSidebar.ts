@@ -7,51 +7,59 @@ export const useSidebar = () => {
   const { isActive } = useBreakpoints();
 
   useEffect(() => {
+    const $ = require('jquery');
+    const $sidebar = $('#sidebar');
+    const $body = $('body');
+
     if (isActive('>large')) {
+      $sidebar.removeClass('inactive');
       setIsInactive(false);
     } else {
+      $sidebar.addClass('inactive');
       setIsInactive(true);
     }
+
+    const handleToggleClick = (event: any) => {
+      event.preventDefault();
+      event.stopPropagation();
+      console.log('jQuery toggle clicked');
+      $sidebar.toggleClass('inactive');
+    };
+
+    const handleBodyClick = (event: any) => {
+      if (isActive('<=large')) {
+        $sidebar.addClass('inactive');
+      }
+    };
+
+    const handleSidebarClick = (event: any) => {
+      if (isActive('<=large')) {
+        event.stopPropagation();
+      }
+    };
+
+    $sidebar.find('.toggle').off('click').on('click', handleToggleClick);
+    $body.off('click.sidebar').on('click.sidebar', handleBodyClick);
+    $sidebar.off('click.sidebar').on('click.sidebar', handleSidebarClick);
+
+    return () => {
+      $sidebar.find('.toggle').off('click');
+      $body.off('click.sidebar');
+      $sidebar.off('click.sidebar');
+    };
   }, [isActive]);
 
   const toggleSidebar = useCallback(() => {
-    console.log('toggleSidebar called, current isInactive:', isInactive);
-    setIsInactive(prev => {
-      console.log('setIsInactive: prev =', prev, ', new =', !prev);
-      return !prev;
-    });
+    const $ = require('jquery');
+    const $sidebar = $('#sidebar');
+    $sidebar.toggleClass('inactive');
   }, []);
 
   const closeSidebar = useCallback(() => {
-    setIsInactive(true);
+    const $ = require('jquery');
+    const $sidebar = $('#sidebar');
+    $sidebar.addClass('inactive');
   }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      const sidebar = document.getElementById('sidebar');
-      const target = event.target as Node;
-      
-      if (sidebar && !sidebar.contains(target) && !isInactive) {
-        setIsInactive(true);
-      }
-    };
-
-    const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && !isInactive) {
-        setIsInactive(true);
-      }
-    };
-
-    if (!isInactive) {
-      document.addEventListener('mousedown', handleClickOutside);
-      document.addEventListener('keydown', handleEscapeKey);
-    }
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-      document.removeEventListener('keydown', handleEscapeKey);
-    };
-  }, [isInactive]);
 
   return {
     isInactive,
