@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import DarkModeToggle from './DarkModeToggle'
 
 interface HeaderProps {
   title?: string;
@@ -100,6 +101,7 @@ export default function Header({ title = "Raimonvibe" }: HeaderProps) {
             <span className="label">Facebook</span>
           </a>
         </li>
+        <DarkModeToggle />
       </ul>
     </header>
   )
