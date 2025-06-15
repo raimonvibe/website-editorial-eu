@@ -316,7 +316,6 @@ export default function Certificates() {
         </div>
       </div>
       <Sidebar />
-      <Footer />
     </div>
   )
 }
