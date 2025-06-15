@@ -56,12 +56,28 @@ export default function Sidebar() {
       toggleSidebar();
     };
 
-    toggleButton.addEventListener('click', handleClick, true);
+    toggleButton.onclick = null;
+    
+    toggleButton.addEventListener('mousedown', handleClick, true);
 
     return () => {
-      toggleButton.removeEventListener('click', handleClick, true);
+      toggleButton.removeEventListener('mousedown', handleClick, true);
     };
   }, [toggleSidebar]);
+
+  useEffect(() => {
+    console.log('isInactive state changed to:', isInactive);
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      const newTransform = isInactive ? 'translateX(-100%)' : 'translateX(0)';
+      sidebar.style.transform = newTransform;
+      sidebar.style.transition = 'transform 0.5s ease';
+      sidebar.className = isInactive ? 'inactive' : '';
+      console.log('Forced sidebar transform to:', newTransform);
+      
+      sidebar.offsetHeight;
+    }
+  }, [isInactive]);
 
   console.log('Sidebar render - isInactive:', isInactive, 'transform:', isInactive ? 'translateX(-100%)' : 'translateX(0)');
   
