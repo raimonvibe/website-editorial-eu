@@ -12,18 +12,36 @@ export default function Sidebar() {
   const toggleButtonRef = useRef<HTMLAnchorElement>(null);
 
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isActive('<=large')) {
-      const href = event.currentTarget.getAttribute('href');
-      if (href && href !== '#' && href !== '') {
-        closeSidebar();
-        setTimeout(() => {
-          window.location.href = href;
-        }, 500);
-      }
+    if (isActive && isActive('>large')) {
+      return;
     }
+
+    const target = event.currentTarget;
+    const href = target.getAttribute('href');
+    const targetAttr = target.getAttribute('target');
+
+    if (!href || href === '#' || href === '') {
+      return;
+    }
+
+    event.preventDefault();
+    event.stopPropagation();
+
+    closeSidebar();
+
+    setTimeout(() => {
+      if (targetAttr === '_blank') {
+        window.open(href);
+      } else {
+        window.location.href = href;
+      }
+    }, 500);
   };
 
-  const handleSidebarClick = (event: React.MouseEvent) => {
+  const handleSidebarClick = (event: React.MouseEvent | React.TouchEvent) => {
+    if (isActive && isActive('>large')) {
+      return;
+    }
     event.stopPropagation();
   };
 
@@ -52,7 +70,7 @@ export default function Sidebar() {
     const handleClick = (event: Event) => {
       event.preventDefault();
       event.stopPropagation();
-      console.log('Direct event listener triggered - toggling sidebar');
+  
       toggleSidebar();
     };
 
@@ -65,33 +83,47 @@ export default function Sidebar() {
     };
   }, [toggleSidebar]);
 
-  useEffect(() => {
-    console.log('isInactive state changed to:', isInactive);
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar) {
-      const newTransform = isInactive ? 'translateX(-100%)' : 'translateX(0)';
-      sidebar.style.transform = newTransform;
-      sidebar.style.transition = 'transform 0.5s ease';
-      sidebar.className = isInactive ? 'inactive' : '';
-      console.log('Forced sidebar transform to:', newTransform);
-      
-      sidebar.offsetHeight;
-    }
-  }, [isInactive]);
 
-  console.log('Sidebar render - isInactive:', isInactive, 'transform:', isInactive ? 'translateX(-100%)' : 'translateX(0)');
   
   return (
-    <div 
-      id="sidebar" 
-      className={isInactive ? 'inactive' : ''}
-      style={{
-        transform: isInactive ? 'translateX(-100%)' : 'translateX(0)',
-        transition: 'transform 0.5s ease'
-      }}
-      onClick={handleSidebarClick}
-    >
-      <div className="inner">
+    <React.Fragment>
+      {/* Toggle button - positioned outside sidebar so it's always visible */}
+      <a 
+        ref={toggleButtonRef}
+        href="#sidebar" 
+        className="toggle"
+        onClick={handleToggleClick}
+        style={{ 
+          position: 'fixed',
+          top: '1rem',
+          right: '1rem',
+          zIndex: 10000,
+          display: isActive && isActive('>large') ? 'none' : 'block',
+          width: '3rem',
+          height: '3rem',
+          lineHeight: '3rem',
+          textAlign: 'center',
+          backgroundColor: 'rgba(0,0,0,0.8)',
+          color: 'white',
+          borderRadius: '4px',
+          textDecoration: 'none',
+          border: 'none',
+          cursor: 'pointer'
+        }}
+      >
+        <span style={{ fontSize: '1.5rem' }}>☰</span>
+      </a>
+
+      {/* Sidebar container */}
+      <div
+        id="sidebar"
+        className={isInactive ? 'inactive' : ''}
+        onClick={handleSidebarClick}
+        onTouchEnd={handleSidebarClick}
+        onTouchStart={handleSidebarClick}
+        onTouchMove={handleSidebarClick}
+      >
+        <div className="inner">
         <section id="search" className="alt">
           <form method="post" action="#">
             <input type="text" name="query" id="query" placeholder="Search" />
@@ -152,16 +184,8 @@ export default function Sidebar() {
         </nav>
 
         <SidebarProjects />
+        </div>
       </div>
-
-      <a 
-        ref={toggleButtonRef}
-        href="#sidebar" 
-        className="toggle"
-        onClick={handleToggleClick}
-      >
-        <span style={{ fontSize: '1.5rem' }}>☰</span>
-      </a>
-    </div>
-  )
+    </React.Fragment>
+  );
 }

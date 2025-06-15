@@ -15,21 +15,21 @@ export const useSidebar = () => {
   }, [isActive]);
 
   const toggleSidebar = useCallback(() => {
-    console.log('toggleSidebar called, current isInactive:', isInactive);
-    setIsInactive(prev => {
-      console.log('setIsInactive: prev =', prev, ', new =', !prev);
-      return !prev;
-    });
+    setIsInactive(prev => !prev);
   }, []);
 
   const closeSidebar = useCallback(() => {
-    setIsInactive(true);
+    if (typeof window !== 'undefined' && window.innerWidth <= 1280) {
+      setIsInactive(true);
+    }
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
+    const handleBodyClick = (event: Event) => {
+      if (typeof window === 'undefined' || window.innerWidth > 1280) return;
+      
       const sidebar = document.getElementById('sidebar');
-      const target = event.target as Node;
+      const target = event.target as Element;
       
       if (sidebar && !sidebar.contains(target) && !isInactive) {
         setIsInactive(true);
@@ -37,18 +37,20 @@ export const useSidebar = () => {
     };
 
     const handleEscapeKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape' && !isInactive) {
+      if (event.key === 'Escape' && !isInactive && typeof window !== 'undefined' && window.innerWidth <= 1280) {
         setIsInactive(true);
       }
     };
 
     if (!isInactive) {
-      document.addEventListener('mousedown', handleClickOutside);
+      document.body.addEventListener('click', handleBodyClick);
+      document.body.addEventListener('touchend', handleBodyClick);
       document.addEventListener('keydown', handleEscapeKey);
     }
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.body.removeEventListener('click', handleBodyClick);
+      document.body.removeEventListener('touchend', handleBodyClick);
       document.removeEventListener('keydown', handleEscapeKey);
     };
   }, [isInactive]);
