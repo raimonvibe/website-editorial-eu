@@ -22,7 +22,7 @@ export default function DarkModeToggle() {
         aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
         title={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
       >
-        <i className={`fas ${resolvedTheme === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
+        <i className={`fas ${resolvedTheme === 'dark' ? 'fa-sun' : 'fa-moon'}`} style={{ fontSize: '1.25em' }}></i>
         <span className="label">{resolvedTheme === 'dark' ? 'Light' : 'Dark'} Mode</span>
       </button>
     </li>
