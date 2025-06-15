@@ -1,34 +1,21 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
-import { useSidebar } from '../hooks/useSidebar'
-import { useBreakpoints } from '../hooks/useBreakpoints'
+
 import SidebarProjects from './SidebarProjects'
 
 export default function Sidebar() {
-  const { isInactive, toggleSidebar, closeSidebar } = useSidebar();
-  const { isActive } = useBreakpoints();
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
-  const toggleButtonRef = useRef<HTMLAnchorElement>(null);
 
-  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
-    if (isActive('<=large')) {
-      const href = event.currentTarget.getAttribute('href');
-      if (href && href !== '#' && href !== '') {
-        closeSidebar();
-        setTimeout(() => {
-          window.location.href = href;
-        }, 500);
-      }
-    }
-  };
+
+
 
   const handleSidebarClick = (event: React.MouseEvent) => {
     event.stopPropagation();
   };
 
   const handleDropdownToggle = (dropdownName: string) => {
-    setOpenDropdowns(prev => {
+    setOpenDropdowns((prev: Set<string>) => {
       const newSet = new Set(prev);
       if (newSet.has(dropdownName)) {
         newSet.delete(dropdownName);
@@ -39,45 +26,9 @@ export default function Sidebar() {
     });
   };
 
-  const handleToggleClick = (event: React.MouseEvent) => {
-    event.preventDefault();
-    event.stopPropagation();
-    console.log('Toggle button clicked');
-    toggleSidebar();
-  };
 
-  useEffect(() => {
-    const $ = require('jquery');
-    const $sidebar = $('#sidebar');
-    
-    $sidebar.find('a').off('click.sidebar').on('click.sidebar', function(this: HTMLElement, event: any) {
-      if (isActive('<=large')) {
-        const href = $(this).attr('href');
-        const target = $(this).attr('target');
-        
-        if (!href || href === '#' || href === '') {
-          return;
-        }
-        
-        event.preventDefault();
-        event.stopPropagation();
-        
-        $sidebar.addClass('inactive');
-        
-        setTimeout(() => {
-          if (target === '_blank') {
-            window.open(href);
-          } else {
-            window.location.href = href;
-          }
-        }, 500);
-      }
-    });
 
-    return () => {
-      $sidebar.find('a').off('click.sidebar');
-    };
-  }, [isActive]);
+
 
 
 
@@ -101,9 +52,9 @@ export default function Sidebar() {
             <h2>Menu</h2>
           </header>
           <ul>
-            <li><Link href="/" onClick={handleLinkClick}>Homepage</Link></li>
-            <li><Link href="/services" onClick={handleLinkClick}>Services</Link></li>
-            <li><Link href="/certificates" onClick={handleLinkClick}>Certificates</Link></li>
+            <li><Link href="/">Homepage</Link></li>
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/certificates">Certificates</Link></li>
             <li>
               <span 
                 className={`opener ${openDropdowns.has('more') ? 'active' : ''}`}
@@ -113,15 +64,15 @@ export default function Sidebar() {
                 More..
               </span>
               <ul>
-                <li><Link href="/about" onClick={handleLinkClick}>About me</Link></li>
-                <li><Link href="/opportunities" onClick={handleLinkClick}>Opportunities</Link></li>
-                <li><Link href="/clients" onClick={handleLinkClick}>Clients</Link></li>
-                <li><Link href="/models" onClick={handleLinkClick}>3D Models</Link></li>
-                <li><Link href="/projects" onClick={handleLinkClick}>Projects</Link></li>
+                <li><Link href="/about">About me</Link></li>
+                <li><Link href="/opportunities">Opportunities</Link></li>
+                <li><Link href="/clients">Clients</Link></li>
+                <li><Link href="/models">3D Models</Link></li>
+                <li><Link href="/projects">Projects</Link></li>
               </ul>
             </li>
-            <li><Link href="/resume" onClick={handleLinkClick}>Resume</Link></li>
-            <li><Link href="/contact" onClick={handleLinkClick}>Contact</Link></li>
+            <li><Link href="/resume">Resume</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
             <li>
               <span 
                 className={`opener ${openDropdowns.has('projects') ? 'active' : ''}`}
@@ -144,22 +95,15 @@ export default function Sidebar() {
                 <li><a href="https://google-login-edu.raimonvibe.com/" target="_blank">Google Login EDU</a></li>
               </ul>
             </li>
-            <li><Link href="/legalnotice" onClick={handleLinkClick}>Legalnotice</Link></li>
-            <li><Link href="/privacynotice" onClick={handleLinkClick}>Privacynotice</Link></li>
+            <li><Link href="/legalnotice">Legalnotice</Link></li>
+            <li><Link href="/privacynotice">Privacynotice</Link></li>
           </ul>
         </nav>
 
         <SidebarProjects />
       </div>
 
-      <a 
-        ref={toggleButtonRef}
-        href="#sidebar" 
-        className="toggle"
-        onClick={handleToggleClick}
-      >
-        <span style={{ fontSize: '1.5rem' }}>☰</span>
-      </a>
+
     </div>
   )
 }
