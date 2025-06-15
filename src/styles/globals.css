@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600,400italic,600italic|Roboto+Slab:400,700");
 /*
 	Editorial by HTML5 UP
@@ -78,6 +82,8 @@ html {
 
 body {
   background: #ffffff; }
+  .dark body {
+    background: #1a1a1a !important; }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after, body.is-resizing *, body.is-resizing *:before, body.is-resizing *:after {
     -moz-animation: none !important;
     -webkit-animation: none !important;
@@ -95,6 +101,8 @@ body, input, select, textarea {
   font-size: 13pt;
   font-weight: 400;
   line-height: 1.65; }
+  .dark body, .dark input, .dark select, .dark textarea {
+    color: #e5e5e5; }
   @media screen and (max-width: 1680px) {
     body, input, select, textarea {
       font-size: 11pt; } }
@@ -122,6 +130,8 @@ a {
 strong, b {
   color: #3d4449;
   font-weight: 600; }
+  .dark strong, .dark b {
+    color: #ffffff; }
 
 em, i {
   font-style: italic; }
@@ -135,6 +145,8 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.5;
   margin: 0 0 1em 0; }
+  .dark h1, .dark h2, .dark h3, .dark h4, .dark h5, .dark h6 {
+    color: #ffffff; }
   h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
     color: inherit;
     text-decoration: none;
@@ -2262,6 +2274,148 @@ button,
     margin: 0.5em 0 1.5em 0;
     padding-left: 1em; }
     #menu > ul > li > ul a, #menu > ul > li > ul span {
+
+/* Dark mode styles */
+.dark #wrapper {
+  background: #1a1a1a;
+}
+
+.dark #main {
+  background: #1a1a1a;
+}
+
+.dark #sidebar {
+  background: #111111;
+  border-left: solid 1px #333333;
+}
+
+.dark #header {
+  border-bottom-color: #f56a6a;
+}
+
+.dark .features article .icon {
+  color: #f56a6a;
+}
+
+.dark .posts article .image img {
+  border: solid 1px #333333;
+}
+
+.dark blockquote {
+  border-left-color: #333333;
+}
+
+.dark code {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #333333;
+}
+
+.dark hr {
+  border-bottom-color: #333333;
+}
+
+.dark #menu {
+  background: #111111;
+}
+
+.dark #menu ul a:hover, .dark #menu ul span:hover {
+  color: #f56a6a;
+}
+
+.dark #menu > ul > li {
+  border-top-color: #333333;
+}
+
+/* Positioned Dark Mode Toggle - positioned horizontally next to hamburger menu */
+#dark-mode-toggle {
+  position: fixed;
+  top: 0;
+  left: 97px;
+  width: 4em;
+  height: 7.5em;
+  line-height: 7.5em;
+  text-align: center;
+  border: 0;
+  background: transparent;
+  outline: 0;
+  cursor: pointer;
+  color: #7f888f;
+  transition: all 0.2s ease;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#dark-mode-toggle:hover {
+  color: #f56a6a;
+}
+
+#dark-mode-toggle i {
+  font-size: 2rem;
+  line-height: 1;
+}
+
+/* Desktop positioning - next to hamburger menu */
+@media screen and (min-width: 1281px) {
+  #dark-mode-toggle {
+    position: absolute;
+    top: 0;
+    left: calc(26em + 6em + 0.5em);
+    width: 4em;
+    height: 7.5em;
+    line-height: 7.5em;
+  }
+  
+  #dark-mode-toggle i {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 1680px) and (min-width: 1281px) {
+  #dark-mode-toggle {
+    left: calc(24em + 5em + 0.5em);
+    height: 6.25em;
+    line-height: 6.25em;
+  }
+  
+  #dark-mode-toggle i {
+    font-size: 2.2rem;
+  }
+}
+
+/* Medium screens positioning */
+@media screen and (max-width: 1280px) and (min-width: 737px) {
+  #dark-mode-toggle {
+    position: fixed;
+    top: 0;
+    left: calc(6em + 0.5em);
+    width: 4em;
+    height: 7.5em;
+    line-height: 7.5em;
+  }
+  
+  #dark-mode-toggle i {
+    font-size: 2rem;
+  }
+}
+
+/* Mobile positioning - horizontally next to hamburger menu */
+@media screen and (max-width: 736px) {
+  #dark-mode-toggle {
+    position: fixed;
+    top: 0;
+    left: 97px;
+    width: 4em;
+    height: 7.5em;
+    line-height: 7.5em;
+  }
+  
+  #dark-mode-toggle i {
+    font-size: 1.8rem;
+  }
+}
+
       font-size: 0.8em; }
     #menu > ul > li > ul > li {
       margin: 0.125em 0 0 0;

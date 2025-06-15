@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import '../styles/globals.css'
+import { ThemeProvider } from '@/contexts/ThemeContext'
+import PositionedDarkModeToggle from '@/components/PositionedDarkModeToggle'
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -65,10 +67,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body className={`${openSans.variable} ${robotoSlab.variable} is-preload`}>
-        <div id="wrapper">
-          {children}
-        </div>
+      <body className={`${openSans.variable} ${robotoSlab.variable} is-preload dark:bg-gray-900 dark:text-gray-100`}>
+        <ThemeProvider>
+          <PositionedDarkModeToggle />
+          <div id="wrapper">
+            {children}
+          </div>
+        </ThemeProvider>
         <script
           dangerouslySetInnerHTML={{
             __html: `
