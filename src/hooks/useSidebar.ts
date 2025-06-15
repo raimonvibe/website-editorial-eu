@@ -10,43 +10,44 @@ export const useSidebar = () => {
     if (isActive('>large')) {
       setIsInactive(false);
     } else {
-      if (!isInactive) {
-        return;
-      }
       setIsInactive(true);
     }
   }, [isActive]);
 
   const toggleSidebar = useCallback(() => {
     setIsInactive(prev => !prev);
-  }, []);
+  }, [isInactive]);
 
   const closeSidebar = useCallback(() => {
     setIsInactive(true);
   }, []);
 
   useEffect(() => {
-    const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-      if (!isActive('<=large')) return;
-      
+    const handleClickOutside = (event: MouseEvent) => {
       const sidebar = document.getElementById('sidebar');
       const target = event.target as Node;
       
-      if (sidebar && !sidebar.contains(target)) {
+      if (sidebar && !sidebar.contains(target) && !isInactive) {
+        setIsInactive(true);
+      }
+    };
+
+    const handleEscapeKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape' && !isInactive) {
         setIsInactive(true);
       }
     };
 
     if (!isInactive) {
-      document.addEventListener('click', handleClickOutside);
-      document.addEventListener('touchend', handleClickOutside);
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscapeKey);
     }
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
-      document.removeEventListener('touchend', handleClickOutside);
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscapeKey);
     };
-  }, [isInactive, isActive]);
+  }, [isInactive]);
 
   return {
     isInactive,

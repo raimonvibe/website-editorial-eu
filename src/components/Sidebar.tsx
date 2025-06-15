@@ -1,12 +1,12 @@
 'use client';
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { useSidebar } from '../hooks/useSidebar'
 import { useBreakpoints } from '../hooks/useBreakpoints'
 import SidebarProjects from './SidebarProjects'
 
 export default function Sidebar() {
-  const { isInactive, toggleSidebar } = useSidebar();
+  const { isInactive, toggleSidebar, closeSidebar } = useSidebar();
   const { isActive } = useBreakpoints();
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
 
@@ -14,6 +14,7 @@ export default function Sidebar() {
     if (isActive('<=large')) {
       const href = event.currentTarget.getAttribute('href');
       if (href && href !== '#' && href !== '') {
+        closeSidebar();
         setTimeout(() => {
           window.location.href = href;
         }, 500);
@@ -22,9 +23,7 @@ export default function Sidebar() {
   };
 
   const handleSidebarClick = (event: React.MouseEvent) => {
-    if (isActive('<=large')) {
-      event.stopPropagation();
-    }
+    event.stopPropagation();
   };
 
   const handleDropdownToggle = (dropdownName: string) => {
@@ -39,10 +38,20 @@ export default function Sidebar() {
     });
   };
 
+  const handleToggleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    toggleSidebar();
+  };
+  
   return (
     <div 
       id="sidebar" 
       className={isInactive ? 'inactive' : ''}
+      style={{
+        transform: isInactive ? 'translateX(-100%)' : 'translateX(0)',
+        transition: 'transform 0.5s ease'
+      }}
       onClick={handleSidebarClick}
     >
       <div className="inner">
@@ -111,11 +120,7 @@ export default function Sidebar() {
       <a 
         href="#sidebar" 
         className="toggle"
-        onClick={(e) => {
-          e.preventDefault();
-          e.stopPropagation();
-          toggleSidebar();
-        }}
+        onClick={handleToggleClick}
       >
         <span style={{ fontSize: '1.5rem' }}>☰</span>
       </a>
