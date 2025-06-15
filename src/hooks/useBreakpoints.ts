@@ -19,7 +19,7 @@ export const useBreakpoints = () => {
       const width = window.innerWidth;
       setWindowWidth(width);
       
-      for (const [name, { min, max }] of Object.entries(breakpoints)) {
+      for (const [name, { min, max }] of Object.entries(breakpoints) as [string, {min: number, max: number}][]) {
         if (width >= min && width <= max) {
           setCurrentBreakpoint(name);
           break;
