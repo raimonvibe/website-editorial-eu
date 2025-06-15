@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
+import DarkModeToggle from './DarkModeToggle'
 
 interface HeaderProps {
   title?: string;
@@ -12,6 +13,7 @@ export default function Header({ title = "Raimonvibe" }: HeaderProps) {
         <strong>{title}</strong> by Raimon
       </Link>
       <ul className="icons">
+        <DarkModeToggle />
         <li>
           <a 
             href="https://x.com/raimonvibe/" 
