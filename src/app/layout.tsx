@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import PositionedDarkModeToggle from '@/components/PositionedDarkModeToggle'
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -68,6 +69,7 @@ export default function RootLayout({
       </head>
       <body className={`${openSans.variable} ${robotoSlab.variable} is-preload dark:bg-gray-900 dark:text-gray-100`}>
         <ThemeProvider>
+          <PositionedDarkModeToggle />
           <div id="wrapper">
             {children}
           </div>
