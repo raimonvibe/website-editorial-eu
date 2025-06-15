@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useSidebar } from '../hooks/useSidebar'
 import { useBreakpoints } from '../hooks/useBreakpoints'
@@ -9,6 +9,7 @@ export default function Sidebar() {
   const { isInactive, toggleSidebar, closeSidebar } = useSidebar();
   const { isActive } = useBreakpoints();
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
+  const toggleButtonRef = useRef<HTMLAnchorElement>(null);
 
   const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     if (isActive('<=large')) {
@@ -43,6 +44,26 @@ export default function Sidebar() {
     event.stopPropagation();
     toggleSidebar();
   };
+
+  useEffect(() => {
+    const toggleButton = toggleButtonRef.current;
+    if (!toggleButton) return;
+
+    const handleClick = (event: Event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      console.log('Direct event listener triggered - toggling sidebar');
+      toggleSidebar();
+    };
+
+    toggleButton.addEventListener('click', handleClick, true);
+
+    return () => {
+      toggleButton.removeEventListener('click', handleClick, true);
+    };
+  }, [toggleSidebar]);
+
+  console.log('Sidebar render - isInactive:', isInactive, 'transform:', isInactive ? 'translateX(-100%)' : 'translateX(0)');
   
   return (
     <div 
@@ -118,6 +139,7 @@ export default function Sidebar() {
       </div>
 
       <a 
+        ref={toggleButtonRef}
         href="#sidebar" 
         className="toggle"
         onClick={handleToggleClick}

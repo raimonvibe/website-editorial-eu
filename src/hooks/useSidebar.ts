@@ -15,8 +15,12 @@ export const useSidebar = () => {
   }, [isActive]);
 
   const toggleSidebar = useCallback(() => {
-    setIsInactive(prev => !prev);
-  }, [isInactive]);
+    console.log('toggleSidebar called, current isInactive:', isInactive);
+    setIsInactive(prev => {
+      console.log('setIsInactive: prev =', prev, ', new =', !prev);
+      return !prev;
+    });
+  }, []);
 
   const closeSidebar = useCallback(() => {
     setIsInactive(true);
