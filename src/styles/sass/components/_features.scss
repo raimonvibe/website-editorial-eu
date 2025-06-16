@@ -37,12 +37,13 @@
 			.icon {
 				@include vendor('flex-grow', '0');
 				@include vendor('flex-shrink', '0');
-				display: block;
+				@include vendor('display', 'flex');
+				@include vendor('align-items', 'flex-end');
+				@include vendor('justify-content', 'center');
 				height: 10em;
-				line-height: 10em;
 				margin: 0 _size(element-margin) 0 0;
-				text-align: center;
 				width: 10em;
+				padding-bottom: 1.5em;
 
 				&:before {
 					color: _palette(accent);
@@ -55,10 +56,8 @@
 					color: #f56a6a !important;
 					width: 2.5rem !important;
 					height: 2.5rem !important;
-					transform: scale(2.5) !important;
 					font-size: 2.5rem !important;
 					position: relative !important;
-					top: 0.05em !important;
 				}
 
 				&:after {
@@ -69,7 +68,7 @@
 					display: block;
 					height: 7em;
 					left: 50%;
-					margin: -2.5em 0 0 -2.5em;
+					margin: -3.5em 0 0 -3.5em;
 					position: absolute;
 					top: 50%;
 					width: 7em;
@@ -114,15 +113,17 @@
 
 				.icon {
 					height: 8em;
-					line-height: 8em;
 					width: 8em;
+					padding-bottom: 1.2em;
 
 					&:before {
 						font-size: 2.25rem;
 					}
 
 					svg {
-						font-size: 2.75rem;
+						font-size: 2.0rem !important;
+						width: 2.0rem !important;
+						height: 2.0rem !important;
 					}
 
 					&:after {
@@ -141,16 +142,18 @@
 
 				.icon {
 					height: 6em;
-					line-height: 6em;
 					margin: 0 0 (_size(element-margin) * 0.75) 0;
 					width: 6em;
+					padding-bottom: 1.0em;
 
 					&:before {
 						font-size: 1.5rem;
 					}
 
 					svg {
-						font-size: 2rem;
+						font-size: 1.5rem !important;
+						width: 1.5rem !important;
+						height: 1.5rem !important;
 					}
 
 					&:after {
@@ -162,34 +165,21 @@
 			}
 		}
 
-		@include breakpoint('<=xsmall') {
+		@include breakpoint('<=xxsmall') {
 			article {
 				.icon {
+					padding-bottom: 0.8em;
+
 					&:before {
 						font-size: 1.25rem;
 					}
 
 					svg {
-						font-size: 1.75rem;
+						font-size: 1.25rem !important;
+						width: 1.25rem !important;
+						height: 1.25rem !important;
 					}
 				}
 			}
 		}
-
-/* High specificity override for FontAwesome SVG icons */
-.features article .icon svg,
-.features article .icon svg[data-icon],
-.features .icon svg {
-	color: #f56a6a !important;
-	width: 2.5rem !important;
-	height: 2.5rem !important;
-	min-width: 2.5rem !important;
-	min-height: 2.5rem !important;
-	transform: scale(2.5) !important;
-	font-size: 2.5rem !important;
-	position: relative !important;
-	top: 0.05em !important;
-	display: inline-block !important;
-}
-
 	}
