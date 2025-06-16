@@ -289,4 +289,58 @@ button[aria-label="Toggle sidebar menu"] {
 			color: _palette(fg) !important;
 		}
 	}
+
+// CRITICAL FIX: Force hamburger menu visibility with maximum CSS specificity
+// This overrides all existing positioning rules that cause the ghost hamburger behavior
+#sidebar .toggle,
+#sidebar button.toggle,
+button[aria-label="Toggle sidebar menu"],
+#sidebar button[aria-label="Toggle sidebar menu"],
+body #sidebar .toggle {
+	text-indent: 0 !important;
+	overflow: visible !important;
+	left: 26em !important;
+	display: block !important;
+	visibility: visible !important;
+	opacity: 1 !important;
+	z-index: 9999 !important;
+	position: absolute !important;
+	
+	svg, .fa-bars {
+		position: absolute !important;
+		left: 50% !important;
+		top: 50% !important;
+		transform: translate(-50%, -50%) !important;
+		font-size: 2rem !important;
+		z-index: 10000 !important;
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		color: inherit !important;
+		text-indent: 0 !important;
+		overflow: visible !important;
+	}
+	
+	@include breakpoint('<=xlarge') {
+		left: _size(sidebar-width-alt) !important;
+		
+		svg, .fa-bars {
+			font-size: 1.5rem !important;
+		}
+	}
+	
+	@include breakpoint('<=large') {
+		svg, .fa-bars {
+			font-size: 1.5rem !important;
+		}
+	}
+	
+	@include breakpoint('<=small') {
+		svg, .fa-bars {
+			font-size: 1.1rem !important;
+			color: _palette(fg) !important;
+		}
+	}
+}
+
 }
