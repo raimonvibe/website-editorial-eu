@@ -23,9 +23,16 @@ export default function Projects() {
             <div className="posts">
               {PROJECTS.map((project) => (
                 <article key={project.id}>
-                  <a href={project.url} target="_blank" className="image">
-                    <Image src={project.image} alt={project.alt} width={400} height={300} />
-                  </a>
+<a href={project.url} target="_blank" className="image">
+  <Image
+    src={project.image}
+    alt={project.alt}
+    width={400}
+    height={300}
+    style={{ width: "100%", height: "auto" }}
+  />
+</a>
+
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <ul className="actions">
