@@ -2113,10 +2113,26 @@ button,
         margin: 0; }
       #header .icons {
         height: 5em;
-        line-height: 5em;
         position: absolute;
-        right: -0.5em;
-        top: 0; } }
+        right: 0.5em;
+        top: 0;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0.25em;
+        width: 12em;
+        align-items: center;
+        justify-items: center; }
+        #header .icons li {
+          margin: 0;
+          padding: 0; }
+          #header .icons li a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 2.5em;
+            height: 2em;
+            line-height: 1; } }
 
 /* Banner */
 #banner {
