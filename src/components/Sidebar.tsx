@@ -132,6 +132,7 @@ export default function Sidebar() {
         onClick={handleToggleClick}
         aria-label="Toggle sidebar menu"
       >
+        <span style={{ fontFamily: 'Font Awesome 5 Free', fontWeight: 900, fontSize: '2rem' }}>&#xf0c9;</span>
       </a>
     </div>
   )
