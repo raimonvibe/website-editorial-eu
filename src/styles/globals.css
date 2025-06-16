@@ -2390,3 +2390,44 @@ button,
 .dark #sidebar .major h2 {
   color: #ffffff !important;
 }
+
+/* Additional comprehensive text color rules for all sidebar elements */
+.dark #sidebar * {
+  color: #ffffff !important;
+}
+
+.dark #sidebar a {
+  color: #ffffff !important;
+}
+
+.dark #sidebar span {
+  color: #ffffff !important;
+}
+
+.dark #sidebar li {
+  color: #ffffff !important;
+}
+
+.dark #sidebar p {
+  color: #ffffff !important;
+}
+
+.dark #sidebar div {
+  color: #ffffff !important;
+}
+
+.dark #sidebar > .inner > * > * {
+  color: #ffffff !important;
+}
+
+.dark #menu li a {
+  color: #ffffff !important;
+}
+
+.dark #menu li span {
+  color: #ffffff !important;
+}
+
+.dark #menu li {
+  color: #ffffff !important;
+}
