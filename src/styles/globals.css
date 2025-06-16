@@ -2285,7 +2285,7 @@ button,
 }
 
 .dark #sidebar {
-  background: #111111;
+  background: #111111 !important;
   border-left: solid 1px #333333;
 }
 
@@ -2335,14 +2335,14 @@ button,
 }
 
 .dark #sidebar > .inner > .alt {
-  background-color: #1a1a1a;
+  background-color: #1a1a1a !important;
   border-bottom-color: #333333;
 }
 
 .dark #search form input[type="text"] {
-  background: #1a1a1a;
+  background: #1a1a1a !important;
   border-color: #333333;
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .dark #search form input[type="text"]:focus {
@@ -2354,11 +2354,11 @@ button,
 }
 
 .dark #menu ul {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .dark #menu ul a, .dark #menu ul span {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .dark #menu ul a:hover, .dark #menu ul span:hover {
@@ -2366,11 +2366,11 @@ button,
 }
 
 .dark #menu > ul > li > ul {
-  color: #9fa3a6;
+  color: #9fa3a6 !important;
 }
 
 .dark #menu > ul > li > ul a, .dark #menu > ul > li > ul span {
-  color: #9fa3a6;
+  color: #9fa3a6 !important;
 }
 
 .dark #menu > ul > li > ul a:hover, .dark #menu > ul > li > ul span:hover {
@@ -2378,7 +2378,7 @@ button,
 }
 
 .dark #menu ul a.opener:before, .dark #menu ul span.opener:before {
-  color: #9fa3a6;
+  color: #9fa3a6 !important;
 }
 
 .dark #menu ul a.opener:hover:before, .dark #menu ul span.opener:hover:before {
@@ -2386,11 +2386,11 @@ button,
 }
 
 .dark #sidebar h2 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .dark #sidebar .major h2 {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 
