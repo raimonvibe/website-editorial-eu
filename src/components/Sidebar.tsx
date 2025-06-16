@@ -136,7 +136,7 @@ export default function Sidebar() {
         aria-label="Toggle sidebar menu"
         type="button"
       >
-        <FontAwesomeIcon icon={faBars} style={{ fontSize: '2rem', display: 'inline-block' }} />
+        <FontAwesomeIcon icon={faBars} style={{ pointerEvents: 'none' }} />
       </button>
     </div>
   )

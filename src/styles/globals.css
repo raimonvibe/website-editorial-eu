@@ -2464,6 +2464,32 @@ body #sidebar .toggle {
   visibility: visible !important;
   opacity: 1 !important;
   z-index: 9999 !important;
+  text-indent: 0 !important;
+  overflow: visible !important;
+}
+
+/* Responsive positioning fixes for different breakpoints */
+@media screen and (max-width: 1680px) {
+  #sidebar .toggle,
+  #sidebar button.toggle,
+  button[aria-label="Toggle sidebar menu"],
+  #sidebar button[aria-label="Toggle sidebar menu"],
+  body #sidebar .toggle {
+    left: 24em !important;
+  }
+}
+
+/* Ensure hamburger button remains visible and accessible when sidebar is inactive */
+#sidebar.inactive .toggle,
+#sidebar.inactive button.toggle,
+#sidebar.inactive button[aria-label="Toggle sidebar menu"],
+body #sidebar.inactive .toggle {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: fixed !important;
+  z-index: 10000 !important;
+  pointer-events: auto !important;
 }
 
 /* Fix SVG icon positioning within the button */
