@@ -30,6 +30,12 @@ export default function Sidebar() {
     }
   }, [sidebarActive]);
 
+  useEffect(() => {
+    const $ = require('jquery');
+    const $sidebar = $('#sidebar');
+    $sidebar.addClass('inactive');
+  }, []);
+
 
 
 
@@ -60,7 +66,7 @@ export default function Sidebar() {
   return (
     <div 
       id="sidebar" 
-      className={sidebarActive ? "" : "inactive"}
+      className="inactive"
       onClick={handleSidebarClick}
     >
       <div className="inner">
@@ -126,14 +132,14 @@ export default function Sidebar() {
         <SidebarProjects />
       </div>
       
-      <a 
-        href="#sidebar" 
+      <button 
         className="toggle" 
         onClick={handleToggleClick}
         aria-label="Toggle sidebar menu"
+        type="button"
       >
         <FontAwesomeIcon icon={faBars} style={{ fontSize: '2rem', display: 'inline-block' }} />
-      </a>
+      </button>
     </div>
   )
 }
