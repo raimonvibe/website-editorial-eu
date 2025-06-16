@@ -20,10 +20,17 @@ export default function Services() {
             <header className="main">
               <h1>Blogs about my Studies</h1>
             </header>
+<span className="image main">
+  <Image
+    src="/images/pic24.jpg"
+    alt=""
+    width={800}
+    height={400}
+    style={{ width: "100%", height: "auto" }}
+  />
+</span>
 
-            <span className="image main">
-              <Image src="/images/pic24.jpg" alt="" width={800} height={400} />
-            </span>
+
 
             <p>
               On Medium, I share in-depth articles about my experiences and learning processes in online coding bootcamps, including project examples and scripts. Additionally, I passionately write about 3D printing, highlighting my unique design process, steps for publication, and my motivation for this innovative technology.
@@ -45,9 +52,16 @@ export default function Services() {
 
             <hr className="major" />
 
-            <span className="image main">
-              <Image src="/images/pic23.jpg" alt="" width={800} height={400} />
-            </span>
+<span className="image main">
+  <Image
+    src="/images/pic23.jpg"
+    alt=""
+    width={800}
+    height={400}
+    style={{ width: "100%", height: "auto" }}
+  />
+</span>
+
 
             <h1>YouTube Creator</h1>
             <p>
