@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from '../contexts/ThemeContext'
 
 export default function PositionedDarkModeToggle() {
@@ -22,7 +24,7 @@ export default function PositionedDarkModeToggle() {
       aria-label={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
       title={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
     >
-      <i className={`fas ${resolvedTheme === 'dark' ? 'fa-sun' : 'fa-moon'}`}></i>
+      <FontAwesomeIcon icon={resolvedTheme === 'dark' ? faSun : faMoon} />
     </button>
   )
 }
