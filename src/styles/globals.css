@@ -2011,6 +2011,9 @@ button,
       display: inline-block !important;
       font-size: 2rem;
       color: inherit; }
+    #sidebar .toggle .fa-bars {
+      font-size: 2rem;
+      color: inherit; }
   #sidebar.inactive {
     margin-left: -26em; }
   @media screen and (max-width: 1680px) {
@@ -2032,6 +2035,8 @@ button,
         #sidebar .toggle:before {
           font-size: 1.5rem; }
         #sidebar .toggle svg {
+          font-size: 1.5rem; }
+        #sidebar .toggle .fa-bars {
           font-size: 1.5rem; }
       #sidebar.inactive {
         margin-left: -24em; } }
@@ -2066,6 +2071,8 @@ button,
           margin-left: -0.4375em; }
         #sidebar .toggle svg {
           font-size: 1.5rem; }
+        #sidebar .toggle .fa-bars {
+          font-size: 1.5rem; }
       body.is-preload #sidebar {
         display: none; } }
   @media screen and (max-width: 736px) {
@@ -2086,7 +2093,9 @@ button,
         left: 1em;
         position: absolute;
         top: 1em;
-        width: 5em; } }
+        width: 5em; }
+      #sidebar .toggle .fa-bars {
+        font-size: 1.1rem; } }
 
 /* Header */
 #header {
@@ -2413,4 +2422,29 @@ button,
 
 .dark #sidebar .major h2 {
   color: #ffffff !important;
+}
+
+/* Responsive Icons */
+.responsive-icon {
+  font-size: 3.5rem;
+  color: #f56a6a;
+  transform: scale(1.0);
+}
+
+@media screen and (max-width: 1680px) {
+  .responsive-icon {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .responsive-icon {
+    font-size: 2.5rem;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .responsive-icon {
+    font-size: 2rem;
+  }
 }

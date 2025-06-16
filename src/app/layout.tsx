@@ -2,6 +2,10 @@ import type { Metadata } from 'next'
 import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import { config } from '@fortawesome/fontawesome-svg-core'
+import '@fortawesome/fontawesome-svg-core/styles.css'
+
+config.autoAddCss = false
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],

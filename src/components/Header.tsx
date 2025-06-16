@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faXTwitter,
   faYoutube,
@@ -10,7 +10,7 @@ import {
   faGithub,
   faLinkedin,
   faFacebook,
-} from "@fortawesome/free-brands-svg-icons";
+} from "@fortawesome/free-brands-svg-icons"
 import DarkModeToggle from './DarkModeToggle'
 
 interface HeaderProps {
