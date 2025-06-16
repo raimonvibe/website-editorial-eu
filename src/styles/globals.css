@@ -1981,7 +1981,7 @@ button,
     overflow: hidden;
     position: absolute;
     text-align: center;
-    text-indent: -15em;
+    text-indent: 0;
     white-space: nowrap;
     top: 0;
     width: 6em;
@@ -2030,7 +2030,7 @@ button,
         height: 6.25em;
         left: 24em;
         line-height: 6.25em;
-        text-indent: 5em;
+        text-indent: 0;
         width: 5em; }
         #sidebar .toggle:before {
           font-size: 1.5rem; }
@@ -2064,7 +2064,7 @@ button,
           height: 4em;
           width: 100%; }
       #sidebar .toggle {
-        text-indent: 6em;
+        text-indent: 0;
         width: 6em; }
         #sidebar .toggle:before {
           font-size: 1.5rem;
@@ -2077,7 +2077,7 @@ button,
         display: none; } }
   @media screen and (max-width: 736px) {
     #sidebar .toggle {
-      text-indent: 7.25em;
+      text-indent: 0;
       width: 7.25em; }
       #sidebar .toggle:before {
         color: #7f888f;
@@ -2446,5 +2446,63 @@ button,
 @media screen and (max-width: 736px) {
   .responsive-icon {
     font-size: 2rem;
+  }
+}
+
+/* CRITICAL FIX: Force hamburger menu button and SVG visibility with maximum CSS specificity */
+/* This overrides all existing positioning rules that cause the button and SVG to be off-screen */
+
+/* Fix button container positioning */
+#sidebar .toggle,
+#sidebar button.toggle,
+button[aria-label="Toggle sidebar menu"],
+#sidebar button[aria-label="Toggle sidebar menu"],
+body #sidebar .toggle {
+  left: 26em !important;
+  position: absolute !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 9999 !important;
+}
+
+/* Fix SVG icon positioning within the button */
+#sidebar .toggle svg,
+#sidebar button.toggle svg,
+button[aria-label="Toggle sidebar menu"] svg,
+#sidebar button[aria-label="Toggle sidebar menu"] svg,
+body #sidebar .toggle svg {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  transform: translate(-50%, -50%) !important;
+  text-indent: 0 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 10000 !important;
+  color: inherit !important;
+  font-size: 2rem !important;
+}
+
+/* Mobile-specific hamburger menu fixes */
+@media screen and (max-width: 1680px) {
+  #sidebar .toggle svg,
+  #sidebar button.toggle svg,
+  button[aria-label="Toggle sidebar menu"] svg,
+  #sidebar button[aria-label="Toggle sidebar menu"] svg,
+  body #sidebar .toggle svg {
+    font-size: 1.5rem !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  #sidebar .toggle svg,
+  #sidebar button.toggle svg,
+  button[aria-label="Toggle sidebar menu"] svg,
+  #sidebar button[aria-label="Toggle sidebar menu"] svg,
+  body #sidebar .toggle svg {
+    font-size: 1.1rem !important;
+    color: #7f888f !important;
   }
 }

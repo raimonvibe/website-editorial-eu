@@ -92,10 +92,14 @@
 			left: _size(sidebar-width);
 			line-height: 7.5em;
 			outline: 0;
-			overflow: hidden;
+			overflow: visible;
 			position: absolute;
 			text-align: center;
 			text-indent: 0;
+			white-space: nowrap;
+			top: 0;
+			width: 6em;
+			z-index: _misc(z-index-base);
 			
 			svg, .fa-bars {
 				position: absolute;
@@ -105,11 +109,10 @@
 				text-indent: 0;
 				font-size: 2rem;
 				z-index: 1;
+				display: block;
+				visibility: visible;
+				opacity: 1;
 			}
-			white-space: nowrap;
-			top: 0;
-			width: 6em;
-			z-index: _misc(z-index-base);
 
 			&:before {
 				content: '\f0c9';
@@ -149,11 +152,11 @@
 				left: _size(sidebar-width-alt);
 				line-height: 6.25em;
 				text-indent: 0;
+				width: 5em;
 				
 				svg, .fa-bars {
 					font-size: 1.5rem;
 				}
-				width: 5em;
 
 				&:before {
 					font-size: 1.5rem;
@@ -196,11 +199,11 @@
 
 			.toggle {
 				text-indent: 0;
+				width: 6em;
 				
 				svg, .fa-bars {
 					font-size: 1.5rem;
 				}
-				width: 6em;
 
 				&:before {
 					font-size: 1.5rem;
@@ -216,13 +219,13 @@
 		@include breakpoint('<=small') {
 			.toggle {
 				text-indent: 0;
+				width: 7.25em;
 				
 				svg, .fa-bars {
 					color: _palette(fg);
 					font-size: 1.1rem;
 					z-index: 2;
 				}
-				width: 7.25em;
 
 				&:before {
 					color: _palette(fg);
@@ -246,101 +249,46 @@
 		}
 	}
 
-// Override hamburger menu positioning with maximum CSS specificity
-button[aria-label="Toggle sidebar menu"] {
-	left: 26em !important;
-	text-indent: 0 !important;
-	display: block !important;
-	visibility: visible !important;
-	opacity: 1 !important;
-	z-index: 999 !important;
-	position: absolute !important;
-	
-	svg {
-		position: absolute !important;
-		left: 50% !important;
-		top: 50% !important;
-		transform: translate(-50%, -50%) !important;
-		font-size: 2rem !important;
-		z-index: 10 !important;
-		display: block !important;
-		visibility: visible !important;
-		opacity: 1 !important;
-		color: inherit !important;
-	}
-	
-	@include breakpoint('<=xlarge') {
-		left: _size(sidebar-width-alt) !important;
-		
-		svg {
-			font-size: 1.5rem !important;
-		}
-	}
-	
-	@include breakpoint('<=large') {
-		svg {
-			font-size: 1.5rem !important;
-		}
-	}
-	
-	@include breakpoint('<=small') {
-		svg {
-			font-size: 1.1rem !important;
-			color: _palette(fg) !important;
-		}
-	}
-
-// CRITICAL FIX: Force hamburger menu visibility with maximum CSS specificity
-// This overrides all existing positioning rules that cause the ghost hamburger behavior
-#sidebar .toggle,
-#sidebar button.toggle,
-button[aria-label="Toggle sidebar menu"],
-#sidebar button[aria-label="Toggle sidebar menu"],
-body #sidebar .toggle {
-	text-indent: 0 !important;
-	overflow: visible !important;
-	left: 26em !important;
-	display: block !important;
-	visibility: visible !important;
-	opacity: 1 !important;
-	z-index: 9999 !important;
-	position: absolute !important;
-	
-	svg, .fa-bars {
-		position: absolute !important;
-		left: 50% !important;
-		top: 50% !important;
-		transform: translate(-50%, -50%) !important;
-		font-size: 2rem !important;
-		z-index: 10000 !important;
-		display: block !important;
-		visibility: visible !important;
-		opacity: 1 !important;
-		color: inherit !important;
+	// Force hamburger menu visibility with maximum CSS specificity
+	// This overrides all existing positioning rules that cause the SVG to be off-screen
+	#sidebar .toggle,
+	button[aria-label="Toggle sidebar menu"] {
 		text-indent: 0 !important;
 		overflow: visible !important;
-	}
-	
-	@include breakpoint('<=xlarge') {
-		left: _size(sidebar-width-alt) !important;
+		display: block !important;
+		visibility: visible !important;
+		opacity: 1 !important;
+		z-index: 9999 !important;
 		
-		svg, .fa-bars {
-			font-size: 1.5rem !important;
+		svg {
+			position: absolute !important;
+			left: 50% !important;
+			top: 50% !important;
+			transform: translate(-50%, -50%) !important;
+			text-indent: 0 !important;
+			display: block !important;
+			visibility: visible !important;
+			opacity: 1 !important;
+			z-index: 10000 !important;
+			color: inherit !important;
+		}
+		
+		@include breakpoint('<=xlarge') {
+			svg {
+				font-size: 1.5rem !important;
+			}
+		}
+		
+		@include breakpoint('<=large') {
+			svg {
+				font-size: 1.5rem !important;
+			}
+		}
+		
+		@include breakpoint('<=small') {
+			svg {
+				font-size: 1.1rem !important;
+				color: _palette(fg) !important;
+			}
 		}
 	}
-	
-	@include breakpoint('<=large') {
-		svg, .fa-bars {
-			font-size: 1.5rem !important;
-		}
-	}
-	
-	@include breakpoint('<=small') {
-		svg, .fa-bars {
-			font-size: 1.1rem !important;
-			color: _palette(fg) !important;
-		}
-	}
-}
-
-}
