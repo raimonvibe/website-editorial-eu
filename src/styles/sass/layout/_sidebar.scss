@@ -95,7 +95,7 @@
 			overflow: hidden;
 			position: absolute;
 			text-align: center;
-			text-indent: -15em;
+			text-indent: 0;
 			
 			svg, .fa-bars {
 				position: absolute;
@@ -148,7 +148,7 @@
 				height: 6.25em;
 				left: _size(sidebar-width-alt);
 				line-height: 6.25em;
-				text-indent: 5em;
+				text-indent: 0;
 				
 				svg, .fa-bars {
 					font-size: 1.5rem;
@@ -195,7 +195,7 @@
 			}
 
 			.toggle {
-				text-indent: 6em;
+				text-indent: 0;
 				
 				svg, .fa-bars {
 					font-size: 1.5rem;
@@ -215,7 +215,7 @@
 
 		@include breakpoint('<=small') {
 			.toggle {
-				text-indent: 7.25em;
+				text-indent: 0;
 				
 				svg, .fa-bars {
 					color: _palette(fg);

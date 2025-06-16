@@ -19,23 +19,6 @@ export default function Sidebar() {
     setSidebarActive(!sidebarActive);
   };
 
-  useEffect(() => {
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar) {
-      if (sidebarActive) {
-        sidebar.classList.remove('inactive');
-      } else {
-        sidebar.classList.add('inactive');
-      }
-    }
-  }, [sidebarActive]);
-
-  useEffect(() => {
-    const sidebar = document.getElementById('sidebar');
-    if (sidebar) {
-      sidebar.classList.add('inactive');
-    }
-  }, []);
 
 
 
@@ -67,7 +50,7 @@ export default function Sidebar() {
   return (
     <div 
       id="sidebar" 
-      className="inactive"
+      className={sidebarActive ? "" : "inactive"}
       onClick={handleSidebarClick}
     >
       <div className="inner">
