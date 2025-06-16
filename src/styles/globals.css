@@ -2273,8 +2273,6 @@ button,
     display: none;
     margin: 0.5em 0 1.5em 0;
     padding-left: 1em; }
-    #menu > ul > li > ul a, #menu > ul > li > ul span {
-
 /* Dark mode styles */
 .dark #wrapper {
   background: #1a1a1a;
@@ -2392,14 +2390,3 @@ button,
 .dark #sidebar .major h2 {
   color: #ffffff !important;
 }
-
-
-
-      font-size: 0.8em; }
-    #menu > ul > li > ul > li {
-      margin: 0.125em 0 0 0;
-      padding: 0.125em 0 0 0; }
-  #menu > ul > li:first-child {
-    border-top: 0;
-    margin-top: 0;
-    padding-top: 0; }
