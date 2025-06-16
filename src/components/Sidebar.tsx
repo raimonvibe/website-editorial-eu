@@ -132,7 +132,6 @@ export default function Sidebar() {
         onClick={handleToggleClick}
         aria-label="Toggle sidebar menu"
       >
-        <FontAwesomeIcon icon={faBars} />
       </a>
     </div>
   )
