@@ -1,6 +1,8 @@
 'use client'
 
 import React from 'react'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from '../contexts/ThemeContext'
 
 export default function DarkModeToggle() {
@@ -23,7 +25,10 @@ export default function DarkModeToggle() {
         title={`Switch to ${resolvedTheme === 'dark' ? 'light' : 'dark'} mode`}
         style={{ border: 'none !important', outline: 'none !important', background: 'transparent !important', borderColor: 'transparent !important' }}
       >
-        <i className={`fas ${resolvedTheme === 'dark' ? 'fa-sun' : 'fa-moon'}`} style={{ fontSize: '1.25em' }}></i>
+        <FontAwesomeIcon 
+          icon={resolvedTheme === 'dark' ? faSun : faMoon} 
+          style={{ fontSize: '1.25em' }} 
+        />
         <span className="label">{resolvedTheme === 'dark' ? 'Light' : 'Dark'} Mode</span>
       </button>
     </li>
