@@ -1,33 +1,20 @@
-import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
 import Footer from '@/components/Footer'
 import Image from 'next/image'
 import Link from 'next/link'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faGem,
   faPaperPlane,
   faRocket,
   faSignal,
 } from "@fortawesome/free-solid-svg-icons"
-import {
-  faXTwitter,
-  faYoutube,
-  faTiktok,
-  faInstagram,
-  faMedium,
-  faGithub,
-  faLinkedin,
-  faFacebook,
-} from "@fortawesome/free-brands-svg-icons"
 
-export const metadata: Metadata = {
-  title: 'Home - Raimonvibe',
-  description: 'Welcome to Raimonvibe - Discover custom-made digital artworks with Raimon, your freelance web designer and developer from West Friesland.',
-}
+
 
 export default function Home() {
+
   return (
     <div id="wrapper">
       <div id="main">
@@ -57,28 +44,28 @@ export default function Home() {
             </header>
             <div className="features">
               <article>
-                <span className="icon"><FontAwesomeIcon icon={faGem} style={{color: '#f56a6a', fontSize: '3.5rem', transform: 'scale(1.0)'}} /></span>
+                <span className="icon"><FontAwesomeIcon icon={faGem} className="responsive-icon" /></span>
                 <div className="content">
                   <h3>Technological Impact</h3>
                   <p>Delving into Data Science and Data Visualization has allowed me to transform complex datasets into clear, insightful visual reports. Learning to program AI with TensorFlow has opened up new possibilities to develop concepts for customized AI solutions that support intelligent, data-driven decision-making.</p>
                 </div>
               </article>
               <article>
-                <span className="icon"><FontAwesomeIcon icon={faPaperPlane} style={{color: '#f56a6a', fontSize: '3.5rem', transform: 'scale(1.0)'}} /></span>
+                <span className="icon"><FontAwesomeIcon icon={faPaperPlane} className="responsive-icon" /></span>
                 <div className="content">
                   <h3>Technological Impact</h3>
                   <p>It's amazing how these experiences not only advance my professional skills but also enhance my problem-solving abilities in everyday life. Sometimes discipline is more present on some days than others, and that's okay.</p>
                 </div>
               </article>
               <article>
-                <span className="icon"><FontAwesomeIcon icon={faRocket} style={{color: '#f56a6a', fontSize: '3.5rem', transform: 'scale(1.0)'}} /></span>
+                <span className="icon"><FontAwesomeIcon icon={faRocket} className="responsive-icon" /></span>
                 <div className="content">
                   <h3>Technological Impact</h3>
                   <p>At RaimonVibe, I'm not just focused on developing technology but also on understanding and innovating it. I've extended my research initiatives to include modern server technologies like VPS (Virtual Private Servers) to host robust, scalable applications that are accessible worldwide.</p>
                 </div>
               </article>
               <article>
-                <span className="icon"><FontAwesomeIcon icon={faSignal} style={{color: '#f56a6a', fontSize: '3.5rem', transform: 'scale(1.0)'}} /></span>
+                <span className="icon"><FontAwesomeIcon icon={faSignal} className="responsive-icon" /></span>
                 <div className="content">
                   <h3>Skills</h3>
                   <p>I'm a skilled developer fluent in Python, JavaScript, HTML5, and CSS3, using React, Node.js, and Flutter to build dynamic apps. I excel in TensorFlow, AI, and data analytics, creating intelligent systems. My web development focuses on responsive design, UX/UI, and cross-browser compatibility. With Git, Tableau Public, and VS Code, I turn ideas into reality.</p>

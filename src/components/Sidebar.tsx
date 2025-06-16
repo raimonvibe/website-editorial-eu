@@ -1,8 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { useTheme } from '../contexts/ThemeContext'
 
 import SidebarProjects from './SidebarProjects'
@@ -10,8 +10,8 @@ import SidebarProjects from './SidebarProjects'
 export default function Sidebar() {
   const { resolvedTheme } = useTheme()
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
-
   const [sidebarActive, setSidebarActive] = useState(false);
+
 
   const handleToggleClick = (event: React.MouseEvent) => {
     event.preventDefault();
@@ -20,20 +20,21 @@ export default function Sidebar() {
   };
 
   useEffect(() => {
-    const $ = require('jquery');
-    const $sidebar = $('#sidebar');
-    
-    if (sidebarActive) {
-      $sidebar.removeClass('inactive');
-    } else {
-      $sidebar.addClass('inactive');
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      if (sidebarActive) {
+        sidebar.classList.remove('inactive');
+      } else {
+        sidebar.classList.add('inactive');
+      }
     }
   }, [sidebarActive]);
 
   useEffect(() => {
-    const $ = require('jquery');
-    const $sidebar = $('#sidebar');
-    $sidebar.addClass('inactive');
+    const sidebar = document.getElementById('sidebar');
+    if (sidebar) {
+      sidebar.classList.add('inactive');
+    }
   }, []);
 
 
@@ -111,17 +112,17 @@ export default function Sidebar() {
                 My projects
               </span>
               <ul>
-                <li><a href="https://skills-hub.raimonvibe.com/" target="_blank">SkillsHub</a></li>
-                <li><a href="https://code-review.raimonvibe.com/" target="_blank">Code Review</a></li>
-                <li><a href="https://www.physics-calculator.raimonvibe.com/" target="_blank">Velocity Calculator</a></li>
-                <li><a href="https://www.physics-flashcards.raimonvibe.com/" target="_blank">Physics Flascards</a></li>
-                <li><a href="https://retro-monitor.raimonvibe.com/" target="_blank">Retro Monitor</a></li>
-                <li><a href="https://animalguesses.raimonvibe.com/" target="_blank">Animal Guesses</a></li>
-                <li><a href="https://www.emf-simulator.raimonvibe.com/" target="_blank">EMF-Simulator</a></li>
-                <li><a href="https://tetris2.0.raimonvibe.com/" target="_blank">Tetris 2.0</a></li>
-                <li><a href="https://periodic-table.raimonvibe.com/" target="_blank">The Periodic Table</a></li>
-                <li><a href="https://inventory-pro.raimonvibe.com/" target="_blank">Inventory Pro</a></li>
-                <li><a href="https://google-login-edu.raimonvibe.com/" target="_blank">Google Login EDU</a></li>
+                <li><a href="https://skills-hub.raimonvibe.com/" target="_blank" rel="noopener noreferrer">SkillsHub</a></li>
+                <li><a href="https://code-review.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Code Review</a></li>
+                <li><a href="https://www.physics-calculator.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Velocity Calculator</a></li>
+                <li><a href="https://www.physics-flashcards.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Physics Flascards</a></li>
+                <li><a href="https://retro-monitor.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Retro Monitor</a></li>
+                <li><a href="https://animalguesses.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Animal Guesses</a></li>
+                <li><a href="https://www.emf-simulator.raimonvibe.com/" target="_blank" rel="noopener noreferrer">EMF-Simulator</a></li>
+                <li><a href="https://tetris2.0.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Tetris 2.0</a></li>
+                <li><a href="https://periodic-table.raimonvibe.com/" target="_blank" rel="noopener noreferrer">The Periodic Table</a></li>
+                <li><a href="https://inventory-pro.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Inventory Pro</a></li>
+                <li><a href="https://google-login-edu.raimonvibe.com/" target="_blank" rel="noopener noreferrer">Google Login EDU</a></li>
               </ul>
             </li>
             <li><Link href="/legalnotice">Legalnotice</Link></li>
