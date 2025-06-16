@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { useTheme } from '../contexts/ThemeContext'
 
 import SidebarProjects from './SidebarProjects'
@@ -9,20 +11,24 @@ export default function Sidebar() {
   const { resolvedTheme } = useTheme()
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
 
+  const [sidebarActive, setSidebarActive] = useState(false);
+
+  const handleToggleClick = (event: React.MouseEvent) => {
+    event.preventDefault();
+    event.stopPropagation();
+    setSidebarActive(!sidebarActive);
+  };
+
   useEffect(() => {
     const $ = require('jquery');
     const $sidebar = $('#sidebar');
     
-    if ($sidebar.find('.toggle').length === 0) {
-      $('<a href="#sidebar" class="toggle">Toggle</a>')
-        .appendTo($sidebar)
-        .on('click', function(event: any) {
-          event.preventDefault();
-          event.stopPropagation();
-          $sidebar.toggleClass('inactive');
-        });
+    if (sidebarActive) {
+      $sidebar.removeClass('inactive');
+    } else {
+      $sidebar.addClass('inactive');
     }
-  }, []);
+  }, [sidebarActive]);
 
 
 
@@ -54,7 +60,7 @@ export default function Sidebar() {
   return (
     <div 
       id="sidebar" 
-      className="inactive"
+      className={sidebarActive ? "" : "inactive"}
       onClick={handleSidebarClick}
     >
       <div className="inner">
@@ -119,8 +125,15 @@ export default function Sidebar() {
 
         <SidebarProjects />
       </div>
-
-
+      
+      <a 
+        href="#sidebar" 
+        className="toggle" 
+        onClick={handleToggleClick}
+        aria-label="Toggle sidebar menu"
+      >
+        <FontAwesomeIcon icon={faBars} />
+      </a>
     </div>
   )
 }
