@@ -12,6 +12,20 @@ export default function Sidebar() {
   const [openDropdowns, setOpenDropdowns] = useState<Set<string>>(new Set());
   const [sidebarActive, setSidebarActive] = useState(false);
 
+  useEffect(() => {
+    const handleBodyClick = () => {
+      setSidebarActive(false);
+    };
+
+    document.body.addEventListener('click', handleBodyClick);
+    document.body.addEventListener('touchend', handleBodyClick);
+
+    return () => {
+      document.body.removeEventListener('click', handleBodyClick);
+      document.body.removeEventListener('touchend', handleBodyClick);
+    };
+  }, []);
+
 
   const handleToggleClick = (event: React.MouseEvent) => {
     event.preventDefault();

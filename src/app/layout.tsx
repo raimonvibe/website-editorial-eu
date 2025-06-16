@@ -4,6 +4,7 @@ import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import { config } from '@fortawesome/fontawesome-svg-core'
 import '@fortawesome/fontawesome-svg-core/styles.css'
+import PreloadManager from '@/components/PreloadManager'
 
 config.autoAddCss = false
 
@@ -70,23 +71,13 @@ export default function RootLayout({
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
-      <body className={`${openSans.variable} ${robotoSlab.variable} is-preload dark:bg-gray-900 dark:text-gray-100`}>
+      <body className={`${openSans.variable} ${robotoSlab.variable} dark:bg-gray-900 dark:text-gray-100`}>
+        <PreloadManager />
         <ThemeProvider>
           <div id="wrapper">
             {children}
           </div>
         </ThemeProvider>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.addEventListener('load', function() {
-                setTimeout(function() {
-                  document.body.classList.remove('is-preload');
-                }, 100);
-              });
-            `
-          }}
-        />
         <script src="/js/jquery.min.js"></script>
         <script src="/js/browser.min.js"></script>
         <script src="/js/breakpoints.min.js"></script>
