@@ -2273,8 +2273,6 @@ button,
     display: none;
     margin: 0.5em 0 1.5em 0;
     padding-left: 1em; }
-    #menu > ul > li > ul a, #menu > ul > li > ul span {
-
 /* Dark mode styles */
 .dark #wrapper {
   background: #1a1a1a;
@@ -2285,7 +2283,7 @@ button,
 }
 
 .dark #sidebar {
-  background: #111111;
+  background: #1a1a1a !important;
   border-left: solid 1px #333333;
 }
 
@@ -2326,13 +2324,69 @@ button,
   border-top-color: #333333;
 }
 
+.dark #sidebar > .inner {
+  border-bottom-color: #333333;
+}
 
+.dark #sidebar > .inner > * {
+  border-bottom-color: #333333;
+}
 
-      font-size: 0.8em; }
-    #menu > ul > li > ul > li {
-      margin: 0.125em 0 0 0;
-      padding: 0.125em 0 0 0; }
-  #menu > ul > li:first-child {
-    border-top: 0;
-    margin-top: 0;
-    padding-top: 0; }
+.dark #sidebar > .inner > .alt {
+  background-color: #1a1a1a !important;
+  border-bottom-color: #333333;
+}
+
+.dark #search form input[type="text"] {
+  background: #1a1a1a !important;
+  border-color: #333333;
+  color: #ffffff !important;
+}
+
+.dark #search form input[type="text"]:focus {
+  border-color: #f56a6a;
+}
+
+.dark #search form:before {
+  color: #9fa3a6;
+}
+
+.dark #menu ul {
+  color: #ffffff !important;
+}
+
+.dark #menu ul a, .dark #menu ul span {
+  color: #ffffff !important;
+}
+
+.dark #menu ul a:hover, .dark #menu ul span:hover {
+  color: #f56a6a;
+}
+
+.dark #menu > ul > li > ul {
+  color: #9fa3a6 !important;
+}
+
+.dark #menu > ul > li > ul a, .dark #menu > ul > li > ul span {
+  color: #9fa3a6 !important;
+}
+
+.dark #menu > ul > li > ul a:hover, .dark #menu > ul > li > ul span:hover {
+  color: #f56a6a;
+}
+
+.dark #menu ul a.opener:before, .dark #menu ul span.opener:before {
+  color: #9fa3a6 !important;
+}
+
+.dark #menu ul a.opener:hover:before, .dark #menu ul span.opener:hover:before {
+  color: #f56a6a;
+}
+
+.dark #sidebar h2 {
+  color: #ffffff !important;
+}
+
+.dark #sidebar .major h2 {
+  color: #ffffff !important;
+}

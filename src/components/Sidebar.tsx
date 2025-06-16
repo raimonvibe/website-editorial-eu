@@ -54,7 +54,7 @@ export default function Sidebar() {
   return (
     <div 
       id="sidebar" 
-      className={`inactive ${resolvedTheme === 'dark' ? 'dark-theme' : 'light-theme'}`}
+      className="inactive"
       onClick={handleSidebarClick}
     >
       <div className="inner">
