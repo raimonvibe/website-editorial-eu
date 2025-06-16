@@ -2326,6 +2326,73 @@ button,
   border-top-color: #333333;
 }
 
+.dark #sidebar > .inner {
+  border-bottom-color: #333333;
+}
+
+.dark #sidebar > .inner > * {
+  border-bottom-color: #333333;
+}
+
+.dark #sidebar > .inner > .alt {
+  background-color: #1a1a1a;
+  border-bottom-color: #333333;
+}
+
+.dark #search form input[type="text"] {
+  background: #1a1a1a;
+  border-color: #333333;
+  color: #ffffff;
+}
+
+.dark #search form input[type="text"]:focus {
+  border-color: #f56a6a;
+}
+
+.dark #search form:before {
+  color: #9fa3a6;
+}
+
+.dark #menu ul {
+  color: #ffffff;
+}
+
+.dark #menu ul a, .dark #menu ul span {
+  color: #ffffff;
+}
+
+.dark #menu ul a:hover, .dark #menu ul span:hover {
+  color: #f56a6a;
+}
+
+.dark #menu > ul > li > ul {
+  color: #9fa3a6;
+}
+
+.dark #menu > ul > li > ul a, .dark #menu > ul > li > ul span {
+  color: #9fa3a6;
+}
+
+.dark #menu > ul > li > ul a:hover, .dark #menu > ul > li > ul span:hover {
+  color: #f56a6a;
+}
+
+.dark #menu ul a.opener:before, .dark #menu ul span.opener:before {
+  color: #9fa3a6;
+}
+
+.dark #menu ul a.opener:hover:before, .dark #menu ul span.opener:hover:before {
+  color: #f56a6a;
+}
+
+.dark #sidebar h2 {
+  color: #ffffff;
+}
+
+.dark #sidebar .major h2 {
+  color: #ffffff;
+}
+
 
 
       font-size: 0.8em; }
