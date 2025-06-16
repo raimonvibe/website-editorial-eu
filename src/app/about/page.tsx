@@ -22,9 +22,15 @@ export default function About() {
               <h1>Hello, I am Raimon</h1>
             </header>
 
-            <span className="image main">
-              <Image src="/images/pic14.jpg" alt="" width={800} height={400} />
-            </span>
+<span className="image main">
+  <Image
+    src="/images/pic14.jpg"
+    alt=""
+    width={800}
+    height={400}
+    style={{ width: "100%", height: "auto" }}
+  />
+</span>
 
             <p>
               During my digital journey, I've combined technology with creativity, creating unique designs that push the boundaries of what's possible. This positive mindset helps me realize my true potential, unhindered by the expectations of others.
