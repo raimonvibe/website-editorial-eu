@@ -51,6 +51,16 @@
 					top: 0.05em;
 				}
 
+				svg {
+					color: #f56a6a !important;
+					width: 3.5rem !important;
+					height: 3.5rem !important;
+					transform: scale(2.5) !important;
+					font-size: 3.5rem !important;
+					position: relative !important;
+					top: 0.05em !important;
+				}
+
 				&:after {
 					@include vendor('transform', 'rotate(45deg)');
 					border-radius: 0.25rem;
@@ -111,6 +121,10 @@
 						font-size: 2.25rem;
 					}
 
+					svg {
+						font-size: 2.75rem;
+					}
+
 					&:after {
 						height: 6em;
 						margin: -3em 0 0 -3em;
@@ -135,6 +149,10 @@
 						font-size: 1.5rem;
 					}
 
+					svg {
+						font-size: 2rem;
+					}
+
 					&:after {
 						height: 4em;
 						margin: -2em 0 0 -2em;
@@ -150,7 +168,28 @@
 					&:before {
 						font-size: 1.25rem;
 					}
+
+					svg {
+						font-size: 1.75rem;
+					}
 				}
 			}
 		}
+
+/* High specificity override for FontAwesome SVG icons */
+.features article .icon svg,
+.features article .icon svg[data-icon],
+.features .icon svg {
+	color: #f56a6a !important;
+	width: 3.5rem !important;
+	height: 3.5rem !important;
+	min-width: 3.5rem !important;
+	min-height: 3.5rem !important;
+	transform: scale(2.5) !important;
+	font-size: 3.5rem !important;
+	position: relative !important;
+	top: 0.05em !important;
+	display: inline-block !important;
+}
+
 	}
