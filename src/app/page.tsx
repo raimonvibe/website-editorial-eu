@@ -23,7 +23,7 @@ export default function Home() {
                 @ raimonvibe</h1>
                 <p>A technical researcher in the tech field.</p>
               </header>
-              <p>About three years ago, I founded raimonvibe, a research company in the technology field, to dive deep into programming and push the boundaries of digital innovation. I've explored a wide range of technologies, working with languages like Python, JavaScript, HTML and CSS, and Flutter Dart. Studying both frontend and backend solutions has been fascinating, aiming for seamless and efficient integration. Utilizing powerful frameworks like React, Django, and Node.js, along with database systems such as MongoDB and Mongoose, I've been able to create robust applications.</p>
+              <p>About four years ago, I founded raimonvibe, a research company in the technology field, to dive deep into programming and push the boundaries of digital innovation. I've explored a wide range of technologies, working with languages like Python, JavaScript, HTML and CSS, and Flutter Dart. Studying both frontend and backend solutions has been fascinating, aiming for seamless and efficient integration. Utilizing powerful frameworks like React, Django, and Node.js, along with database systems such as MongoDB and Mongoose, I've been able to create robust applications.</p>
               <ul className="actions">
                 <li><Link href="/about" className="button big">Learn More</Link></li>
               </ul>
