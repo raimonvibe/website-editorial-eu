@@ -94,7 +94,7 @@ export const NIGERIAN_PROJECTS: Project[] = [
     id: 'lagos-health-navigator',
     title: 'Lagos Health Navigator',
     description: 'A web-based tool to help Lagos residents find healthcare services, with features like hospital locators and appointment scheduling tailored to local needs.',
-    url: 'https://lagos-health-navigator.vercel.app/',
+    url: 'https://github.com/raimonvibe/lagos-health-navigator-v2',
     image: '/images/health-navigator.png',
     alt: 'A health service locator interface for Lagos',
     buttonText: 'Visit Lagos Health Navigator'
