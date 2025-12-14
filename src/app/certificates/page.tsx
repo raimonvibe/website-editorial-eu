@@ -87,17 +87,6 @@ export default function Certificates() {
                   <li><a href="https://www.udemy.com/course/assertiveness-training-course/" className="button" target="_blank" rel="noreferrer">More</a></li>
                 </ul>
               </article>
-
-              <article>
-                <a href="https://products.thecodedose.com/javascript-mastery" className="image">
-                  <Image src="/images/javascript_mastery.webp" alt="My JavaScript Mastery certificate" width={400} height={300} />
-                </a>
-                <h3>JavaScript Mastery</h3>
-                <p>I completed the JavaScript Mastery course from The Code Dose, which helped refresh my memory and improve my understanding of both fundamental and advanced JavaScript concepts.</p>
-                <ul className="actions">
-                  <li><a href="https://products.thecodedose.com/javascript-mastery" className="button" target="_blank" rel="noreferrer">More</a></li>
-                </ul>
-              </article>
            
               <article>
                 <a href="https://codewithmosh.com/p/ultimate-nextjs-series" className="image">
