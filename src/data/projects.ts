@@ -18,15 +18,15 @@ export const PROJECTS: Project[] = [
       alt: 'Change-My Image Converter interface',
       buttonText: 'Visit Change-My.com'
     },
-  // {
-  //   id: 'skills-hub',
-  //   title: 'Recommended Stack',
-  //   description: 'This project is about exploring and recommending different technology stacks for web development. It\'s a tool I\'m developing to help developers find the right tools for their projects.',
-  //   url: 'https://skills-hub.raimonvibe.com/',
-  //   image: '/images/skills.png',
-  //   alt: 'A serene setup with a developer exploring technology stacks',
-  //   buttonText: 'Visit SkillsHub'
-  // },
+   {
+     id: 'skills-hub',
+     title: 'Recommended Stack',
+     description: 'This project is about exploring and recommending different technology stacks for web development. It\'s a tool I\'m developing to help developers find the right tools for their projects.',
+     url: 'https://raimon.pythonanywhere.com/',
+     image: '/images/skills.png',
+     alt: 'A serene setup with a developer exploring technology stacks',
+     buttonText: 'Visit SkillsHub'
+  },
   {
     id: 'code-review',
     title: 'SaaS Code Review',
