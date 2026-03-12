@@ -4,8 +4,7 @@
 
 A modern editorial-style website built with **Next.js**, **Tailwind CSS**, and **TypeScript**. This project is designed for creating sleek, accessible, and fast-loading editorial sites for European content creators, publishers, or organizations.
 
-🌍 **Live Website:** [website-editorial-eu.vercel.app](https://website-editorial-eu.vercel.app/)
-
+🌍 **Live Website:** [raimonvibe.eu](https://www.raimonvibe.eu/)
 ---
 
 ## ✨ Features
