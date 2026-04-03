@@ -95,9 +95,11 @@
 			}, userConfig);
 
 			// Expand "target" if it's not a jQuery object already.
-				if (typeof config.target != 'jQuery')
-					config.target = $(config.target);
-
+				// if (typeof config.target != 'jQuery')
+				// 	config.target = $(config.target);
+				if (typeof config.target !== 'object' || !(config.target instanceof $)) {
+				  config.target = $(config.target).first();  // or sanitize selector
+				}
 		// Panel.
 
 			// Methods.
