@@ -110,9 +110,16 @@
 						// Fallback to the panel element itself as the target.
 						config.target = $this;
 					} else {
-						// Treat as a selector; use the first match. Use $.find so the
+						// Treat as a selector; use $.find so the
 						// string is always interpreted as a selector, not as HTML.
-						config.target = $($.find(targetStr)).first();
+						var foundTargets = $.find(targetStr);
+						if (foundTargets && foundTargets.length) {
+							// Wrap the results in a jQuery object.
+							config.target = $(foundTargets);
+						} else {
+							// If nothing is found, fallback to the panel element itself.
+							config.target = $this;
+						}
 					}
 				}
 				else {
