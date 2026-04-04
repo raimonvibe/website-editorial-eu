@@ -95,10 +95,28 @@
 			}, userConfig);
 
 			// Expand "target" if it's not a jQuery object already.
-				// if (typeof config.target != 'jQuery')
-				// 	config.target = $(config.target);
-				if (typeof config.target !== 'object' || !(config.target instanceof $)) {
-				  config.target = $(config.target).first();  // or sanitize selector
+				// If target is already a jQuery object, leave it as-is.
+				if (config.target instanceof $) {
+					// do nothing
+				}
+				else if (config.target && (config.target.nodeType === 1 || config.target === window || config.target === document)) {
+					// DOM element, window, or document: wrap in jQuery.
+					config.target = $(config.target);
+				}
+				else if (typeof config.target === 'string') {
+					var targetStr = config.target.trim();
+					// If the string looks like HTML, do NOT pass it to $() to avoid XSS.
+					if (targetStr.charAt(0) === '<') {
+						// Fallback to the panel element itself as the target.
+						config.target = $this;
+					} else {
+						// Treat as a selector; use the first match.
+						config.target = $(targetStr).first();
+					}
+				}
+				else {
+					// Unsupported type: fallback to the panel element.
+					config.target = $this;
 				}
 		// Panel.
 
