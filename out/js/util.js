@@ -95,38 +95,24 @@
 			}, userConfig);
 
 			// Expand "target" if it's not a jQuery object already.
-				// If target is already a jQuery object, leave it as-is.
-				if (config.target instanceof $) {
-					// do nothing
+			if (!(config.target instanceof $)) {
+			  if (config.target && (config.target.nodeType === 1 || config.target === window || config.target === document)) {
+				config.target = $(config.target);
+			  } else if (typeof config.target === 'string') {
+				var targetStr = config.target.trim();
+				if (targetStr.charAt(0) === '<') {
+				  config.target = $this;
+				} else {
+				  config.target = $(document).find(targetStr).first();
 				}
-				else if (config.target && (config.target.nodeType === 1 || config.target === window || config.target === document)) {
-					// DOM element, window, or document: wrap in jQuery.
-					config.target = $(config.target);
-				}
-				else if (typeof config.target === 'string') {
-					var targetStr = config.target.trim();
-					// If the string looks like HTML, do NOT pass it to $() to avoid XSS.
-					if (targetStr.charAt(0) === '<') {
-						// Fallback to the panel element itself as the target.
-						config.target = $this;
-					} else {
-						// Treat as a selector; use $.find so the
-						// string is always interpreted as a selector, not as HTML.
-						var foundTargets = $.find(targetStr);
-						if (foundTargets && foundTargets.length) {
-							// Wrap the results in a jQuery object.
-							config.target = $(foundTargets);
-						} else {
-							// If nothing is found, fallback to the panel element itself.
-							config.target = $this;
-						}
-					}
-				}
-				else {
-					// Unsupported type: fallback to the panel element.
-					config.target = $this;
-				}
-		// Panel.
+			  } else {
+				config.target = $this;
+			  }
+			
+			  if (!config.target || config.target.length === 0) {
+				config.target = $this;
+			  }
+			}
 
 			// Methods.
 				$this._hide = function(event) {
