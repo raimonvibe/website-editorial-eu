@@ -110,8 +110,9 @@
 						// Fallback to the panel element itself as the target.
 						config.target = $this;
 					} else {
-						// Treat as a selector; use the first match.
-						config.target = $(targetStr).first();
+						// Treat as a selector; use the first match. Use $.find so the
+						// string is always interpreted as a selector, not as HTML.
+						config.target = $($.find(targetStr)).first();
 					}
 				}
 				else {
