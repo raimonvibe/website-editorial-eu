@@ -95,10 +95,22 @@
 			}, userConfig);
 
 			// Expand "target" if it's not a jQuery object already.
-				// if (typeof config.target != 'jQuery')
-				// 	config.target = $(config.target);
-				if (typeof config.target !== 'object' || !(config.target instanceof $)) {
-				  config.target = $(config.target).first();  // or sanitize selector
+				if (!(config.target instanceof $)) {
+
+					// DOM element or window/document: wrap directly.
+					if (config.target && (config.target.nodeType === 1 || config.target === window || config.target === document)) {
+						config.target = $(config.target);
+					}
+
+					// String: treat strictly as selector, not HTML.
+					else if (typeof config.target === 'string') {
+						config.target = $(document).find(config.target).first();
+					}
+
+					// Fallback: if no valid target resolved, use the panel element itself.
+					if (!config.target || config.target.length === 0) {
+						config.target = $this;
+					}
 				}
 
 		// Panel.
