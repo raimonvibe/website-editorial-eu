@@ -133,11 +133,15 @@ export default function RootLayout({
               });
               heap.load("2918829767");
             `
-          }}
+}}
         />
-<div id="prayer-chat-chatbot-prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd" data-embed-code="prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd"></div>
-<script>
-(function() {
+        <div
+          id="prayer-chat-chatbot-prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd"
+          data-embed-code="prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function() {
     var embedCode = 'prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd';
     var baseUrl = 'https://prayer-chat-backend-web-service.onrender.com';
     var script = document.createElement('script');
@@ -156,9 +160,9 @@ export default function RootLayout({
         }
     };
     document.head.appendChild(script);
-})();
-</script>
-
+})();`
+          }}
+        />
       </body>
     </html>
   )
