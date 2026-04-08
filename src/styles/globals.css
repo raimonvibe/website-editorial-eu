@@ -2460,4 +2460,19 @@ button,
     color: rgb(243 244 246/var(--tw-text-opacity,1))
 }
 
+/* Protect prayer chat widget from global input styles */
+[id^="prayer-chat-chatbot"] input,
+[id^="prayer-chat-chatbot"] textarea,
+[id^="prayer-chat-chatbot"] select,
+[class*="prayer-chat"] input,
+[class*="prayer-chat"] textarea,
+[class*="PrayerChat"] input,
+[class*="PrayerChat"] textarea {
+  color: initial !important;
+  background: initial !important;
+  -webkit-appearance: initial !important;
+  -moz-appearance: initial !important;
+  appearance: initial !important;
+  font-size: initial !important;
+}
 
