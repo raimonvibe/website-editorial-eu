@@ -135,14 +135,14 @@ export default function RootLayout({
             `
 }}
         />
-        <div
-          id="prayer-chat-chatbot-prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd"
-          data-embed-code="prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd"
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function() {
-    var embedCode = 'prayer-chat-bot-Bh9Ee_Gl6mp_-qQkw4GisESd';
+<div
+  id="prayer-chat-chatbot-prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
+  data-embed-code="prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
+/>
+<script
+  dangerouslySetInnerHTML={{
+    __html: `(function() {
+    var embedCode = 'prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax';
     var baseUrl = 'https://prayer-chat-backend-web-service.onrender.com';
     var script = document.createElement('script');
     script.src = baseUrl + '/js/chatbot-widget.js';
@@ -161,8 +161,8 @@ export default function RootLayout({
     };
     document.head.appendChild(script);
 })();`
-          }}
-        />
+  }}
+/>
       </body>
     </html>
   )
