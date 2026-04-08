@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import PrayerChatWidget from '@/components/PrayerChatWidget'
+
 
 const openSans = Open_Sans({ 
   subsets: ['latin'],
@@ -135,35 +137,11 @@ export default function RootLayout({
             `
 }}
         />
-<div
-  id="prayer-chat-chatbot-prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
-  data-embed-code="prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
-  suppressHydrationWarning={true}
-></div>
-<script
-  dangerouslySetInnerHTML={{
-    __html: `(function() {
-    var embedCode = 'prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax';
-    var baseUrl = 'https://prayer-chat-backend-web-service.onrender.com';
-    var script = document.createElement('script');
-    script.src = baseUrl + '/js/chatbot-widget.js';
-    script.async = true;
-    script.onerror = function() {
-        var el = document.getElementById('prayer-chat-chatbot-' + embedCode) || document.querySelector('[data-embed-code="' + embedCode + '"]');
-        if (el) el.innerHTML = '<p style="padding:12px;background:#fff3cd;border:1px solid #ffc107;border-radius:8px;font-family:sans-serif;font-size:14px;">Chat could not load. Check browser console (F12) or Content-Security-Policy.</p>';
-    };
-    script.onload = function() {
-        if (typeof PrayerChat !== 'undefined' && PrayerChat.init) {
-            PrayerChat.init({ embedCode: embedCode, apiUrl: baseUrl + '/api' });
-        } else {
-            var el = document.getElementById('prayer-chat-chatbot-' + embedCode) || document.querySelector('[data-embed-code="' + embedCode + '"]');
-            if (el) el.innerHTML = '<p style="padding:12px;background:#f8d7da;border:1px solid #f5c6cb;border-radius:8px;font-family:sans-serif;font-size:14px;">Chat failed to start. Open console (F12) for details.</p>';
-        }
-    };
-    document.head.appendChild(script);
-})();`
-  }}
-/>
+
+        <script dangerouslySetInnerHTML={{ __html: `heap.load(...)` }} />
+
+        <PrayerChatWidget />
+
       </body>
     </html>
   )
