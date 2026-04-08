@@ -138,6 +138,7 @@ export default function RootLayout({
 <div
   id="prayer-chat-chatbot-prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
   data-embed-code="prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
+  suppressHydrationWarning={true}
 ></div>
 <script
   dangerouslySetInnerHTML={{
