@@ -3,7 +3,7 @@ import { useEffect } from 'react'
 
 export default function PrayerChatWidget() {
   useEffect(() => {
-    const embedCode = 'prayer-chat-bot-Nw-H0n7Pw53W3RNTRU2ixYKd';
+    const embedCode = 'prayer-chat-bot-h3LFK_eQULWRKCso6h1BRQYN';
     const baseUrl = 'https://chatbot-java-spring-ai.onrender.com';
     const script = document.createElement('script');
     script.src = baseUrl + '/js/chatbot-widget.js';
@@ -25,8 +25,8 @@ export default function PrayerChatWidget() {
 
   return (
     <div
-      id="prayer-chat-chatbot-prayer-chat-bot-Nw-H0n7Pw53W3RNTRU2ixYKd"
-      data-embed-code="prayer-chat-bot-Nw-H0n7Pw53W3RNTRU2ixYKd"
+      id="prayer-chat-chatbot-prayer-chat-bot-h3LFK_eQULWRKCso6h1BRQYN"
+      data-embed-code="prayer-chat-bot-h3LFK_eQULWRKCso6h1BRQYN"
       suppressHydrationWarning={true}
     />
   );
