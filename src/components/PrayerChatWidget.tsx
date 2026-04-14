@@ -3,8 +3,8 @@ import { useEffect } from 'react'
 
 export default function PrayerChatWidget() {
   useEffect(() => {
-    const embedCode = 'prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax';
-    const baseUrl = 'https://prayer-chat-backend-web-service.onrender.com';
+    const embedCode = 'prayer-chat-bot-Nw-H0n7Pw53W3RNTRU2ixYKd';
+    const baseUrl = 'https://chatbot-java-spring-ai.onrender.com';
     const script = document.createElement('script');
     script.src = baseUrl + '/js/chatbot-widget.js';
     script.async = true;
@@ -21,12 +21,12 @@ export default function PrayerChatWidget() {
       }
     };
     document.head.appendChild(script);
-  }, []); // empty array = runs once only, never re-runs
+  }, []);
 
   return (
     <div
-      id="prayer-chat-chatbot-prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
-      data-embed-code="prayer-chat-bot-DKrwOq1-5jQiJ-XSg_NkFVax"
+      id="prayer-chat-chatbot-prayer-chat-bot-Nw-H0n7Pw53W3RNTRU2ixYKd"
+      data-embed-code="prayer-chat-bot-Nw-H0n7Pw53W3RNTRU2ixYKd"
       suppressHydrationWarning={true}
     />
   );
