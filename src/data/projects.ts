@@ -18,6 +18,15 @@ export const PROJECTS: Project[] = [
     //   alt: 'Change-My Image Converter interface',
     //   buttonText: 'Visit Change-My.com'
     // },
+    {
+    id: 'prayer-chat',
+    title: 'Prayer-Chat',
+    description: 'Christian AI chatbots with biblical wisdom. Transform your ministry or business website into an intelligent assistant rooted in Christian values.',
+    url: 'https://www.prayer-chat.com/',
+    image: '/images/prayer-chat.png',
+    alt: 'A serene Christian AI chatbot interface with biblical elements',
+    buttonText: 'Visit Prayer-Chat'
+   },
    {
      id: 'skills-hub',
      title: 'Recommended Stack',
