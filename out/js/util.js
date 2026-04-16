@@ -96,22 +96,25 @@
 
 			// Expand "target" if it's not a jQuery object already.
 			if (!(config.target instanceof $)) {
-			  if (config.target && (config.target.nodeType === 1 || config.target === window || config.target === document)) {
-				config.target = $(config.target);
-			  } else if (typeof config.target === 'string') {
-				var targetStr = config.target.trim();
-				if (targetStr.charAt(0) === '<') {
-				  config.target = $this;
-				} else {
-				  config.target = $(document).find(targetStr).first();
+				if (config.target && (config.target.nodeType === 1 || config.target === window || config.target === document)) {
+					config.target = $(config.target);
 				}
-			  } else {
-				config.target = $this;
-			  }
-			
-			  if (!config.target || config.target.length === 0) {
-				config.target = $this;
-			  }
+				else if (typeof config.target === 'string') {
+					var targetStr = config.target.trim();
+					var targetElement = null;
+
+					// Only allow a safe #id selector when target is provided as a string.
+					if (/^#[A-Za-z][\w:-]*$/.test(targetStr))
+						targetElement = document.getElementById(targetStr.slice(1));
+
+					config.target = targetElement ? $(targetElement) : $this;
+				}
+				else {
+					config.target = $this;
+				}
+
+				if (!config.target || config.target.length === 0)
+					config.target = $this;
 			}
 
 			// Methods.
