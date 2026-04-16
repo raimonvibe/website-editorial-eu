@@ -27,15 +27,15 @@ export const NIGERIAN_PROJECTS: Project[] = [
     alt: 'A digital interface for Nigerian developers dealing with unreliable internet.',
     buttonText: 'Visit Connection Solution'
   },
-  {
-    id: 'open-ai-api-guide',
-    title: 'How to Use Open AI API',
-    description: 'A comprehensive guide for Nigerian developers on integrating Open AI APIs into their projects, with examples tailored to local use cases like chatbots and automation.',
-    url: 'https://how-to-use-open-ai-api.vercel.app/',
-    image: '/images/open-ai-guide.png',
-    alt: 'A workspace with code snippets for Open AI API integration',
-    buttonText: 'Visit Open AI API Guide'
-  },
+  // {
+  //   id: 'open-ai-api-guide',
+  //   title: 'How to Use Open AI API',
+  //   description: 'A comprehensive guide for Nigerian developers on integrating Open AI APIs into their projects, with examples tailored to local use cases like chatbots and automation.',
+  //   url: 'https://how-to-use-open-ai-api.vercel.app/',
+  //   image: '/images/open-ai-guide.png',
+  //   alt: 'A workspace with code snippets for Open AI API integration',
+  //   buttonText: 'Visit Open AI API Guide'
+  // },
   {
     id: 'payment-solution-guide',
     title: 'Payment Solution Guide for Nigerians',
