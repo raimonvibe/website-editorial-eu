@@ -139,7 +139,6 @@ export default function RootLayout({
 
         <script dangerouslySetInnerHTML={{ __html: `heap.load(...)` }} />
 
-        <PrayerChatWidget />
 
       </body>
     </html>
