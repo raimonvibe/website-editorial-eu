@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import PrayerChatWidget from '../components/PrayerChatWidget'
+
 
 
 const openSans = Open_Sans({ 
@@ -137,8 +139,8 @@ export default function RootLayout({
 }}
         />
 
-        <script dangerouslySetInnerHTML={{ __html: `heap.load(...)` }} />
 
+   <PrayerChatWidget /> 
 
       </body>
     </html>
