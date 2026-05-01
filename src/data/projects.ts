@@ -80,7 +80,7 @@ export const PROJECTS: Project[] = [
   image: '/images/animalguesses.png',
   alt: 'Animal Guesses app on Google Play',
   buttonText: 'Get it on Play Store'
-}
+},
   {
     id: 'emf-simulator',
     title: 'Motional EMF Simulator',
