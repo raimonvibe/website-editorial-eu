@@ -7,7 +7,7 @@ A modern editorial-style website built with **Next.js**, **Tailwind CSS**, and *
 🌍 **Live Website:** [raimonvibe.eu](https://www.raimonvibe.eu/)
 ---
 
-## ✨ Features
+## ✨  Features
 
 - ⚡ Fast and lightweight using Next.js
 - 🎨 Styled with Tailwind CSS and fully responsive
