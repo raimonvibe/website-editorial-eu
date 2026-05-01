@@ -72,15 +72,15 @@ export const PROJECTS: Project[] = [
     alt: 'A vintage-inspired workspace with a retro typewriter',
     buttonText: 'Visit Retro Monitor'
   },
-  {
-    id: 'animal-guesses',
-    title: 'Animal Riddles',
-    description: 'An interactive quiz game that combines curiosity with play. Whether you\'re recognizing sounds, images, or fun clues, each challenge invites you to guess the animal behind the mystery.',
-    url: 'https://www.animalguesses.raimonvibe.com/',
-    image: '/images/animalguesses.png',
-    alt: 'A workspace featuring animal-themed art',
-    buttonText: 'Visit Animal Guesses'
-  },
+{
+  id: 'animal-guesses',
+  title: 'Animal Guesses',
+  description: 'Fun interactive animal quiz for kids! Guess animals from sounds, pictures & riddles. Perfect way to learn while playing. Educational & entertaining!',
+  url: 'https://play.google.com/store/apps/details?id=com.raimonvibe.animalguesses2',
+  image: '/images/animalguesses.png',
+  alt: 'Animal Guesses app on Google Play',
+  buttonText: 'Get it on Play Store'
+}
   {
     id: 'emf-simulator',
     title: 'Motional EMF Simulator',
