@@ -9,15 +9,7 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-    // {
-    //   id: 'change-my-image',
-    //   title: 'Change-My Image Converter',
-    //   description: 'A modern, ad-free image converter supporting formats like JPG, PNG, WEBP, HEIC, and more. Fast, secure, and privacy-friendly — built for individuals and creators who value simplicity.',
-    //   url: 'https://www.change-my.com/',
-    //   image: '/images/change-my.png',
-    //   alt: 'Change-My Image Converter interface',
-    //   buttonText: 'Visit Change-My.com'
-    // },
+
     {
     id: 'prayer-chat',
     title: 'Prayer-Chat',
@@ -27,6 +19,15 @@ export const PROJECTS: Project[] = [
     alt: 'A serene Christian AI chatbot interface with biblical elements',
     buttonText: 'Visit Prayer-Chat'
    },
+      {
+      id: 'change-my-image',
+      title: 'Change-My Image Converter',
+      description: 'A modern, ad-free image converter supporting formats like JPG, PNG, WEBP, HEIC, and more. Fast, secure, and privacy-friendly — built for individuals and creators who value simplicity.',
+      url: 'https://www.change-my.com/',
+      image: '/images/change-my.png',
+      alt: 'Change-My Image Converter interface',
+      buttonText: 'Visit Change-My.com'
+    },
    {
      id: 'skills-hub',
      title: 'Recommended Stack',
