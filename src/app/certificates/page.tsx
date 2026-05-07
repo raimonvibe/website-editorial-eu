@@ -108,6 +108,16 @@ export default function Certificates() {
                   <li><a href="https://www.udemy.com/course/flutter-bootcamp-with-dart/" className="button" target="_blank" rel="noreferrer">More</a></li>
                 </ul>
               </article>
+              <article>
+                <a href="https://www.udemy.com/course/spring-5-with-spring-boot-2/" className="image">
+                  <Image src="/images/java-spring.webp" alt="Java Spring Framework, Spring Boot certificate" width={400} height={300} />
+                </a>
+                <h3>Spring Boot</h3>
+                <p>In this course, I learned Java Spring Framework and Spring Boot to build robust enterprise applications.</p>
+                <ul className="actions">
+                  <li><a href="https://www.udemy.com/course/spring-5-with-spring-boot-2/" className="button" target="_blank" rel="noreferrer">More</a></li>
+                </ul>
+              </article>
             </div>
           </section>
         </div>
