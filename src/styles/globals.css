@@ -2193,13 +2193,16 @@ button,
   #banner .banner-visual .banner-spline-fallback {
     object-fit: cover;
     z-index: 1;
-    opacity: 1; }
+    opacity: 1;
+    transition: opacity 240ms ease; }
   #banner .banner-visual .banner-spline-iframe {
     border: 0;
     background: transparent;
     z-index: 2;
     opacity: 0;
     transition: opacity 240ms ease; }
+  #banner .banner-visual .banner-spline-wrap.is-loaded .banner-spline-fallback {
+    opacity: 0; }
   #banner .banner-visual .banner-spline-wrap.is-loaded .banner-spline-iframe {
     opacity: 1; }
   @media screen and (orientation: portrait) {
