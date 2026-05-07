@@ -95,11 +95,36 @@ export default function RootLayout({
             `
           }}
         />
-        <Script src="/js/jquery.min.js" strategy="afterInteractive" />
-        <Script src="/js/browser.min.js" strategy="afterInteractive" />
-        <Script src="/js/breakpoints.min.js" strategy="afterInteractive" />
-        <Script src="/js/util.js" strategy="afterInteractive" />
-        <Script src="/js/main.js" strategy="afterInteractive" />
+        <Script
+          id="load-legacy-scripts"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                var scripts = [
+                  "/js/jquery.min.js",
+                  "/js/browser.min.js",
+                  "/js/breakpoints.min.js",
+                  "/js/util.js",
+                  "/js/main.js"
+                ];
+
+                function loadSequentially(index) {
+                  if (index >= scripts.length) return;
+                  var script = document.createElement("script");
+                  script.src = scripts[index];
+                  script.async = false;
+                  script.onload = function () {
+                    loadSequentially(index + 1);
+                  };
+                  document.body.appendChild(script);
+                }
+
+                loadSequentially(0);
+              })();
+            `
+          }}
+        />
         <Script
           id="heap-analytics"
           strategy="afterInteractive"
