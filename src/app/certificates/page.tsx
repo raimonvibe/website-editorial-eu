@@ -98,6 +98,16 @@ export default function Certificates() {
                   <li><a href="https://codewithmosh.com/p/ultimate-nextjs-series" className="button" target="_blank" rel="noreferrer">More</a></li>
                 </ul>
               </article>
+              <article>
+                <a href="https://www.udemy.com/course/flutter-bootcamp-with-dart/" className="image">
+                  <Image src="/images/Flutter.webp" alt="Flutter Development Bootcamp with Dart certificate" width={400} height={300} />
+                </a>
+                <h3>Flutter</h3>
+                <p>In this course, I learned Flutter with Dart to build cross-platform mobile apps, covering UI, state management, Firebase, and more.</p>
+                <ul className="actions">
+                  <li><a href="https://www.udemy.com/course/flutter-bootcamp-with-dart/" className="button" target="_blank" rel="noreferrer">More</a></li>
+                </ul>
+              </article>
             </div>
           </section>
         </div>
