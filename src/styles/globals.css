@@ -2178,12 +2178,33 @@ button,
     display: block;
     margin: 5.5em 0 0.75em 2.5em;
     width: 65%; }
-  #banner .banner-visual .banner-spline-iframe {
-    display: block;
+  #banner .banner-visual .banner-spline-wrap {
+    position: relative;
     width: 100%;
     height: clamp(26rem, 58vw, 48rem);
+    overflow: hidden; }
+  #banner .banner-visual .banner-spline-fallback,
+  #banner .banner-visual .banner-spline-iframe {
+    display: block;
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%; }
+  #banner .banner-visual .banner-spline-fallback {
+    object-fit: cover;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 240ms ease; }
+  #banner .banner-visual .banner-spline-iframe {
     border: 0;
-    background: transparent; }
+    background: transparent;
+    z-index: 2;
+    opacity: 0;
+    transition: opacity 240ms ease; }
+  #banner .banner-visual .banner-spline-wrap.is-loaded .banner-spline-fallback {
+    opacity: 0; }
+  #banner .banner-visual .banner-spline-wrap.is-loaded .banner-spline-iframe {
+    opacity: 1; }
   @media screen and (orientation: portrait) {
     #banner {
       -moz-flex-direction: column-reverse;
@@ -2213,7 +2234,7 @@ button,
         flex-shrink: 0;
         margin: 0 0 4em 0;
         width: 100%; } }
-      #banner .banner-visual .banner-spline-iframe {
+      #banner .banner-visual .banner-spline-wrap {
         height: clamp(25rem, 90vw, 46rem); }
 
 /* Footer */
