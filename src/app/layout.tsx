@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Open_Sans, Roboto_Slab } from 'next/font/google'
+import Script from 'next/script'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
 import PrayerChatWidget from '../components/PrayerChatWidget'
@@ -81,7 +82,9 @@ export default function RootLayout({
             {children}
           </div>
         </ThemeProvider>
-        <script
+        <Script
+          id="remove-preload-class"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.addEventListener('load', function() {
@@ -92,12 +95,14 @@ export default function RootLayout({
             `
           }}
         />
-        <script src="/js/jquery.min.js"></script>
-        <script src="/js/browser.min.js"></script>
-        <script src="/js/breakpoints.min.js"></script>
-        <script src="/js/util.js"></script>
-        <script src="/js/main.js"></script>
-        <script
+        <Script src="/js/jquery.min.js" strategy="afterInteractive" />
+        <Script src="/js/browser.min.js" strategy="afterInteractive" />
+        <Script src="/js/breakpoints.min.js" strategy="afterInteractive" />
+        <Script src="/js/util.js" strategy="afterInteractive" />
+        <Script src="/js/main.js" strategy="afterInteractive" />
+        <Script
+          id="heap-analytics"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (window.heap = window.heap || []),

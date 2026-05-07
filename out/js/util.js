@@ -113,9 +113,12 @@
 					config.target = $this;
 				}
 
+				// Fallback
 				if (!config.target || config.target.length === 0)
 					config.target = $this;
 			}
+
+		// Panel.
 
 			// Methods.
 				$this._hide = function(event) {

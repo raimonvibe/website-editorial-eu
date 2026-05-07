@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
+import BannerSpline from '@/components/BannerSpline'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -28,9 +29,9 @@ export default function Home() {
                 <li><Link href="/about" className="button big">Learn More</Link></li>
               </ul>
             </div>
-            <span className="image object">
-              <Image src="/images/pic12.jpg" alt="" width={600} height={800} />
-            </span>
+            <div className="banner-visual">
+              <BannerSpline />
+            </div>
           </section>
 
           <section>
