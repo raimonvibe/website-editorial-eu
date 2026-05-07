@@ -416,7 +416,10 @@
 
 							event.preventDefault();
 
-							var x = i.parent().find('input[name=' + i.attr('name') + '-polyfill-field]');
+							var fieldName = i.attr('name') + '-polyfill-field';
+							var x = i.parent().find('input').filter(function() {
+								return this.name === fieldName;
+							});
 
 							if (i.val() == '') {
 
@@ -432,7 +435,10 @@
 
 							event.preventDefault();
 
-							var i = x.parent().find('input[name=' + x.attr('name').replace('-polyfill-field', '') + ']');
+							var inputName = x.attr('name').replace('-polyfill-field', '');
+							var i = x.parent().find('input').filter(function() {
+								return this.name === inputName;
+							});
 
 							x.hide();
 
@@ -496,7 +502,10 @@
 								case 'password':
 									i.val(i.attr('defaultValue'));
 
-									x = i.parent().find('input[name=' + i.attr('name') + '-polyfill-field]');
+									var resetFieldName = i.attr('name') + '-polyfill-field';
+									x = i.parent().find('input').filter(function() {
+										return this.name === resetFieldName;
+									});
 
 									if (i.val() == '') {
 										i.hide();
