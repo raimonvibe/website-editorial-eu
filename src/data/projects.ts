@@ -38,14 +38,14 @@ export const PROJECTS: Project[] = [
      buttonText: 'Visit SkillsHub'
   },
   {
-    id: 'code-review',
-    title: 'SaaS Code Review',
-    description: 'This is a tool I\'m developing to help developers analyze and improve the quality of their code. It\'s all about detecting potential problems early on, so you can build more robust and reliable software.',
-    url: 'https://code-review.raimonvibe.com/',
-    image: '/images/code-review.png',
-    alt: 'A calm workspace with a developer reviewing code',
-    buttonText: 'Visit Code Review'
-  },
+  //   id: 'code-review',
+  //   title: 'SaaS Code Review',
+  //   description: 'This is a tool I\'m developing to help developers analyze and improve the quality of their code. It\'s all about detecting potential problems early on, so you can build more robust and reliable software.',
+  //   url: 'https://code-review.raimonvibe.com/',
+  //   image: '/images/code-review.png',
+  //   alt: 'A calm workspace with a developer reviewing code',
+  //   buttonText: 'Visit Code Review'
+  // },
   {
     id: 'physics-calculator',
     title: 'Speed Calculation',
@@ -109,15 +109,15 @@ export const PROJECTS: Project[] = [
     alt: 'An interactive periodic table',
     buttonText: 'Visit The Periodic Table'
   },
-  {
-    id: 'inventory-pro',
-    title: 'Inventory Pro',
-    description: 'A modern inventory management system designed to streamline stock tracking, supplier coordination, and transaction logging.',
-    url: 'https://inventory-pro.raimonvibe.com/',
-    image: '/images/inventory.png',
-    alt: 'A sleek interface showcasing inventory tracking',
-    buttonText: 'Visit Inventory Pro'
-  },
+  // {
+  //   id: 'inventory-pro',
+  //   title: 'Inventory Pro',
+  //   description: 'A modern inventory management system designed to streamline stock tracking, supplier coordination, and transaction logging.',
+  //   url: 'https://inventory-pro.raimonvibe.com/',
+  //   image: '/images/inventory.png',
+  //   alt: 'A sleek interface showcasing inventory tracking',
+  //   buttonText: 'Visit Inventory Pro'
+  // },
   {
     id: 'google-login-edu',
     title: 'Google Login EDU',
