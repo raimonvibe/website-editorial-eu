@@ -37,7 +37,7 @@ export const PROJECTS: Project[] = [
      alt: 'A serene setup with a developer exploring technology stacks',
      buttonText: 'Visit SkillsHub'
   },
-  {
+  // {
   //   id: 'code-review',
   //   title: 'SaaS Code Review',
   //   description: 'This is a tool I\'m developing to help developers analyze and improve the quality of their code. It\'s all about detecting potential problems early on, so you can build more robust and reliable software.',
