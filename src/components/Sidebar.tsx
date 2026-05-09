@@ -101,7 +101,7 @@ export default function Sidebar() {
               </span>
               <ul>
                 <li><a href="https://skills-hub.raimonvibe.com/" target="_blank">SkillsHub</a></li>
-                <li><a href="https://code-review.raimonvibe.com/" target="_blank">Code Review</a></li>
+                {/* <li><a href="https://code-review.raimonvibe.com/" target="_blank">Code Review</a></li> */}
                 <li><a href="https://www.physics-calculator.raimonvibe.com/" target="_blank">Velocity Calculator</a></li>
                 <li><a href="https://www.physics-flashcards.raimonvibe.com/" target="_blank">Physics Flascards</a></li>
                 <li><a href="https://retro-monitor.raimonvibe.com/" target="_blank">Retro Monitor</a></li>
@@ -109,7 +109,7 @@ export default function Sidebar() {
                 <li><a href="https://www.emf-simulator.raimonvibe.com/" target="_blank">EMF-Simulator</a></li>
                 <li><a href="https://tetris2.0.raimonvibe.com/" target="_blank">Tetris 2.0</a></li>
                 <li><a href="https://periodic-table.raimonvibe.com/" target="_blank">The Periodic Table</a></li>
-                <li><a href="https://inventory-pro.raimonvibe.com/" target="_blank">Inventory Pro</a></li>
+                {/* <li><a href="https://inventory-pro.raimonvibe.com/" target="_blank">Inventory Pro</a></li> */}
                 <li><a href="https://google-login-edu.raimonvibe.com/" target="_blank">Google Login EDU</a></li>
               </ul>
             </li>
