@@ -100,7 +100,7 @@ export default function Sidebar() {
                 My projects
               </span>
               <ul>
-                <li><a href="https://skills-hub.raimonvibe.com/" target="_blank">SkillsHub</a></li>
+                <li><a href="https://raimon.pythonanywhere.com/" target="_blank">SkillsHub</a></li>
                 {/* <li><a href="https://code-review.raimonvibe.com/" target="_blank">Code Review</a></li> */}
                 <li><a href="https://www.physics-calculator.raimonvibe.com/" target="_blank">Velocity Calculator</a></li>
                 <li><a href="https://www.physics-flashcards.raimonvibe.com/" target="_blank">Physics Flascards</a></li>
