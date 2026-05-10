@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
-import BannerSpline from '@/components/BannerSpline'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -30,7 +29,14 @@ export default function Home() {
               </ul>
             </div>
             <div className="banner-visual">
-              <BannerSpline />
+              <Image
+                src="/images/pic12.jpg"
+                alt="Keyboard setup preview"
+                width={1200}
+                height={900}
+                className="banner-image"
+                priority
+              />
             </div>
           </section>
 

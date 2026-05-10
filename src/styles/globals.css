@@ -2205,6 +2205,11 @@ button,
     opacity: 0; }
   #banner .banner-visual .banner-spline-wrap.is-loaded .banner-spline-iframe {
     opacity: 1; }
+  #banner .banner-visual .banner-image {
+    display: block;
+    width: 100%;
+    height: clamp(26rem, 58vw, 48rem);
+    object-fit: cover; }
   @media screen and (orientation: portrait) {
     #banner {
       -moz-flex-direction: column-reverse;
@@ -2236,6 +2241,10 @@ button,
         width: 100%; } }
       #banner .banner-visual .banner-spline-wrap {
         height: clamp(25rem, 90vw, 46rem); }
+
+@media screen and (orientation: portrait) {
+  #banner .banner-visual .banner-image {
+    height: clamp(25rem, 90vw, 46rem); } }
 
 /* Footer */
 #footer .copyright {
