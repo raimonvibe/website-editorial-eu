@@ -10,7 +10,7 @@ declare global {
 }
 
 export default function PrayerChatWidget() {
-  const embedCode = 'prayer-chat-bot-oLh2CNfVh8CWaZE1TOCCZUXD';
+  const embedCode = 'prayer-chat-bot-qJrralsR6TvSB-zQhPBoXz5O';
   const baseUrl = 'https://chatbot-java-spring-ai.onrender.com';
 
   useEffect(() => {
