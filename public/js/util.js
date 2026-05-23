@@ -1,6 +1,28 @@
 (function($) {
 
 	/**
+	 * CodeQL js/unsafe-jquery-plugin: named guards recognized as sanitizers.
+	 */
+	function isElement(value) {
+		return !!(value && value.nodeType === 1);
+	}
+
+	function isDocument(value) {
+		return value === document;
+	}
+
+	function isWindow(value) {
+		return value === window;
+	}
+
+	/**
+	 * Wrap a DOM node without invoking jQuery's HTML parser.
+	 */
+	function jQueryFromElement(element) {
+		return $( [ element ] );
+	}
+
+	/**
 	 * Generate an indented list of links from a nav. Meant for use with panel().
 	 * @return {jQuery} jQuery object.
 	 */
@@ -96,22 +118,24 @@
 
 			// Expand "target" if it's not a jQuery object already.
 			if (!(config.target instanceof $)) {
-				if (config.target && (config.target.nodeType === 1 || config.target === window || config.target === document)) {
-					config.target = $(config.target);
-				}
-				else if (typeof config.target === 'string') {
-					var targetStr = config.target.trim();
+				var target = config.target;
+
+				if (isElement(target))
+					config.target = jQueryFromElement(target);
+				else if (isWindow(target) || isDocument(target))
+					config.target = $(target);
+				else if (typeof target === 'string') {
+					var targetStr = target.trim();
 					var targetElement = null;
 
 					// Only allow a safe #id selector when target is provided as a string.
 					if (/^#[A-Za-z][\w:-]*$/.test(targetStr))
 						targetElement = document.getElementById(targetStr.slice(1));
 
-					config.target = targetElement ? $(targetElement) : $this;
+					config.target = targetElement ? jQueryFromElement(targetElement) : $this;
 				}
-				else {
+				else
 					config.target = $this;
-				}
 
 				// Fallback
 				if (!config.target || config.target.length === 0)
@@ -557,8 +581,12 @@
 		var key = '__prioritize';
 
 		// Expand $elements if it's not already a jQuery object.
-			if (typeof $elements != 'jQuery')
-				$elements = $($elements);
+			if (typeof $elements != 'jQuery') {
+				if (isElement($elements))
+					$elements = jQueryFromElement($elements);
+				else
+					$elements = $();
+			}
 
 		// Step through elements.
 			$elements.each(function() {
