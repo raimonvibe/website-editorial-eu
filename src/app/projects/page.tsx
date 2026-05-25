@@ -36,7 +36,23 @@ export default function Projects() {
                   <h3>{project.title}</h3>
                   <p>{project.description}</p>
                   <ul className="actions">
-                    <li><a href={project.url} target="_blank" className="button">{project.buttonText}</a></li>
+                    <li>
+                      <a
+                        href={project.url}
+                        target={project.url.startsWith('/') ? undefined : '_blank'}
+                        rel={project.url.startsWith('/') ? undefined : 'noopener noreferrer'}
+                        className="button"
+                      >
+                        {project.buttonText}
+                      </a>
+                    </li>
+                    {project.siteUrl && (
+                      <li>
+                        <a href={project.siteUrl} className="button">
+                          {project.siteButtonText ?? 'Learn more'}
+                        </a>
+                      </li>
+                    )}
                   </ul>
                 </article>
               ))}

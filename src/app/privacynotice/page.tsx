@@ -132,6 +132,20 @@ export default function PrivacyNotice() {
             <p>
               Raimonvibe takes the protection of your data seriously and takes appropriate measures to prevent abuse, loss, unauthorized access, unwanted disclosure, and unauthorized modification. If you believe that your data is not properly secured or there are indications of abuse, please contact our customer service or at <a href="mailto:info@raimonvibe.com">info@raimonvibe.com</a>.
             </p>
+
+            <h2>Mobile apps</h2>
+            <p>
+              This privacy notice applies to the <strong>raimonvibe website</strong>. Our Android apps
+              have separate policies:
+            </p>
+            <ul>
+              <li>
+                <a href="/apps/animal-guesses/privacy">Animal Guesses privacy policy</a>
+              </li>
+              <li>
+                <a href="/apps/music-guesses/privacy">Music Guesses privacy policy</a>
+              </li>
+            </ul>
           </section>
         </div>
       </div>

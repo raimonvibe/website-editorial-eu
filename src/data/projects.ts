@@ -6,6 +6,8 @@ export interface Project {
   image: string;
   alt: string;
   buttonText: string;
+  siteUrl?: string;
+  siteButtonText?: string;
 }
 
 export const PROJECTS: Project[] = [
@@ -76,11 +78,14 @@ export const PROJECTS: Project[] = [
 {
   id: 'animal-guesses',
   title: 'Animal Guesses',
-  description: 'Fun interactive animal quiz for kids! Guess animals from sounds, pictures & riddles. Perfect way to learn while playing. Educational & entertaining!',
+  description:
+    'Free educational animal quiz for kids and families. 21 animals, photos and sounds, true/false questions — no ads, no in-app purchases.',
   url: 'https://play.google.com/store/apps/details?id=com.raimonvibe.animalguesses2',
   image: '/images/animalguesses.png',
   alt: 'Animal Guesses app on Google Play',
-  buttonText: 'Get it on Play Store'
+  buttonText: 'Get it on Play Store',
+  siteUrl: '/apps/animal-guesses',
+  siteButtonText: 'App info & privacy',
 },
   {
     id: 'emf-simulator',
