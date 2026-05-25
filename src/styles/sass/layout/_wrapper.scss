@@ -9,5 +9,7 @@
 	#wrapper {
 		@include vendor('display', 'flex');
 		@include vendor('flex-direction', 'row-reverse');
+		max-width: 100%;
 		min-height: 100vh;
+		overflow-x: hidden;
 	}

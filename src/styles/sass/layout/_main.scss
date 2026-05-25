@@ -9,6 +9,8 @@
 	#main {
 		@include vendor('flex-grow', '1');
 		@include vendor('flex-shrink', '1');
+		min-width: 0;
+		overflow-x: hidden;
 		width: 100%;
 
 		> .inner {

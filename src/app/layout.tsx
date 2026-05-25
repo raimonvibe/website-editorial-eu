@@ -78,9 +78,7 @@ export default function RootLayout({
       </head>
       <body className={`${openSans.variable} ${robotoSlab.variable} is-preload dark:bg-gray-900 dark:text-gray-100`}>
         <ThemeProvider>
-          <div id="wrapper">
-            {children}
-          </div>
+          {children}
         </ThemeProvider>
         <Script
           id="remove-preload-class"
