@@ -39,15 +39,15 @@ export const PROJECTS: Project[] = [
      alt: 'A serene setup with a developer exploring technology stacks',
      buttonText: 'Visit SkillsHub'
   },
-{
-  id: 'tanach',
-  title: 'Tanach Explorer',
-  description: 'An interactive tool for exploring the Hebrew Bible (Tanach). Dive into the sacred texts of the Torah, Nevi\'im, and Ketuvim with an intuitive interface designed for study and reflection.',
-  url: 'https://tanach.vercel.app/',
-  image: '/images/jewish-bible.png',
-  alt: 'An open Jewish bible with a Star of David and Hebrew text',
-  buttonText: 'Explore Tanach'
-},
+  {
+     id: 'tanach',
+     title: 'Tanach Explorer',
+     description: 'An interactive tool for exploring the Hebrew Bible (Tanach). Dive into the sacred texts of the Torah, Nevi\'im, and Ketuvim with an intuitive interface designed for study and reflection.',
+     url: 'https://tanach.vercel.app/',
+     image: '/images/jewish-bible.webp',
+     alt: 'An open Jewish bible with a Star of David and Hebrew text',
+     buttonText: 'Explore Tanach'
+   },
   {
     id: 'physics-calculator',
     title: 'Speed Calculation',
