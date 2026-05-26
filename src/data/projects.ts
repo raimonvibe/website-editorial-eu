@@ -119,7 +119,7 @@ export const PROJECTS: Project[] = [
     title: 'Unsmoke',
     description: 'A supportive quit-smoking and vaping tracker that helps you take back control of your health. Log your quit date, track your progress, and stay motivated on your journey to a smoke-free life — all stored privately in your browser.',
     url: 'https://unsmoke-five.vercel.app/',
-    image: '/images/unsmoke.webp',
+    image: '/images/leafs-background.webp',
     alt: 'Unsmoke app interface with a green sprout logo and quit smoking tracker',
     buttonText: 'Visit Unsmoke'
   },
