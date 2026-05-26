@@ -128,7 +128,7 @@ export const PROJECTS: Project[] = [
     title: 'Rootwork',
     description: 'A compassionate resource platform helping people build confidence and success in the world of work. Rootwork explores how early experiences shape our professional lives and offers practical guidance for moving forward.',
     url: 'https://rootwork-teal.vercel.app/',
-    image: '/images/rootwork.png',
+    image: '/images/rootwork.webp',
     alt: 'Rootwork hero section with the tagline You\'ve come a long way. Now let\'s move forward.',
     buttonText: 'Visit Rootwork'
   },
