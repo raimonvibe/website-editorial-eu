@@ -114,15 +114,15 @@ export const PROJECTS: Project[] = [
     alt: 'An interactive periodic table',
     buttonText: 'Visit The Periodic Table'
   },
-  // {
-  //   id: 'inventory-pro',
-  //   title: 'Inventory Pro',
-  //   description: 'A modern inventory management system designed to streamline stock tracking, supplier coordination, and transaction logging.',
-  //   url: 'https://inventory-pro.raimonvibe.com/',
-  //   image: '/images/inventory.png',
-  //   alt: 'A sleek interface showcasing inventory tracking',
-  //   buttonText: 'Visit Inventory Pro'
-  // },
+  {
+    id: 'unsmoke',
+    title: 'Unsmoke',
+    description: 'A supportive quit-smoking and vaping tracker that helps you take back control of your health. Log your quit date, track your progress, and stay motivated on your journey to a smoke-free life — all stored privately in your browser.',
+    url: 'https://unsmoke-five.vercel.app/',
+    image: '/images/unsmoke.webp',
+    alt: 'Unsmoke app interface with a green sprout logo and quit smoking tracker',
+    buttonText: 'Visit Unsmoke'
+  },
   {
     id: 'google-login-edu',
     title: 'Google Login EDU',
