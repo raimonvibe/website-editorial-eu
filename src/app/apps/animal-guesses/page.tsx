@@ -35,7 +35,7 @@ export default function AnimalGuessesAppPage() {
 
             <span className="image main">
               <Image
-                src="/images/animalguesses.png"
+                src="/images/animal_guesses.webp"
                 alt="Animal Guesses app on Google Play"
                 width={966}
                 height={600}

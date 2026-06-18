@@ -81,10 +81,22 @@ export const PROJECTS: Project[] = [
   description:
     'Free educational animal quiz for kids and families. 21 animals, photos and sounds, true/false questions — no ads, no in-app purchases.',
   url: 'https://play.google.com/store/apps/details?id=com.raimonvibe.animalguesses2',
-  image: '/images/animalguesses.png',
+  image: '/images/animal_guesses.webp',
   alt: 'Animal Guesses app on Google Play',
   buttonText: 'Get it on Play Store',
   siteUrl: '/apps/animal-guesses',
+  siteButtonText: 'App info & privacy',
+},
+{
+  id: 'music-guesses',
+  title: 'Music Guesses',
+  description:
+    'Free educational music quiz for Android. Listen to instrument sounds, look at pictures, and answer true/false questions — no ads, no in-app purchases.',
+  url: 'https://play.google.com/store/apps/details?id=com.raimonvibe.musicguesses',
+  image: '/images/music_guesses.webp',
+  alt: 'Music Guesses app on Google Play',
+  buttonText: 'Get it on Play Store',
+  siteUrl: '/apps/music-guesses',
   siteButtonText: 'App info & privacy',
 },
   {

@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Sidebar from '@/components/Sidebar'
@@ -30,6 +31,17 @@ export default function MusicGuessesAppPage() {
             <header className="main">
               <h1>{name}</h1>
             </header>
+
+            <span className="image main">
+              <Image
+                src="/images/music_guesses.webp"
+                alt="Music Guesses app on Google Play"
+                width={966}
+                height={600}
+                style={{ width: '100%', height: 'auto' }}
+                priority
+              />
+            </span>
 
             <p>
               <strong>{name}</strong> is an educational music quiz for Android by{' '}
