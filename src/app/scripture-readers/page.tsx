@@ -7,7 +7,7 @@ import { SCRIPTURE_READERS } from '@/data/scripture-readers'
 export const metadata: Metadata = {
   title: 'Scripture Readers - Raimonvibe',
   description:
-    'Online scripture readers for the Tanach, Holy Bible, Book of Mormon, Apocrypha, and Lost Scriptures.',
+    'Online scripture readers for the Tanach, Holy Bible, Bible Stories for Children, Book of Mormon, Apocrypha, and Lost Scriptures.',
 }
 
 export default function ScriptureReaders() {

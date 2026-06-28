@@ -30,6 +30,16 @@ export const SCRIPTURE_READERS: ScriptureReader[] = [
     buttonText: 'Read the Bible',
   },
   {
+    id: 'childrens-bible',
+    title: 'Bible Stories for Children',
+    description:
+      'Read classic Old and New Testament stories from Project Gutenberg in a beautiful, modern interface — Child\'s Story of the Bible and Mother Stories from the New Testament, with listen-along audio.',
+    url: 'https://childrens-bible.vercel.app/',
+    image: '/images/childrens-bible.webp',
+    alt: 'Bible Stories for Children hero with book icon and Project Gutenberg story collections',
+    buttonText: 'Read Bible Stories',
+  },
+  {
     id: 'book-of-mormon',
     title: 'Book of Mormon Reader',
     description:
@@ -58,5 +68,15 @@ export const SCRIPTURE_READERS: ScriptureReader[] = [
     image: '/images/lost-scriptures.webp',
     alt: 'Lost Scriptures reader hero with Start reading call to action',
     buttonText: 'Start Reading',
+  },
+  {
+    id: 'prayer-intentions',
+    title: 'Prayer Intentions',
+    description:
+      'Explore who and what to pray for — 25+ topics with storytelling descriptions, sample prayers, and gentle guidance on when to pray. Search, read-aloud speech mode, and a calm interface for family, healing, peace, and more.',
+    url: 'https://prayer-intentions.vercel.app/',
+    image: '/images/prayer.webp',
+    alt: 'Prayer Intentions homepage with prayer topics and search',
+    buttonText: 'Explore Prayer Intentions',
   },
 ];
