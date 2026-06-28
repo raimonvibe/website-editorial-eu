@@ -69,4 +69,14 @@ export const SCRIPTURE_READERS: ScriptureReader[] = [
     alt: 'Lost Scriptures reader hero with Start reading call to action',
     buttonText: 'Start Reading',
   },
+  {
+    id: 'prayer-intentions',
+    title: 'Prayer Intentions',
+    description:
+      'Explore who and what to pray for — 25+ topics with storytelling descriptions, sample prayers, and gentle guidance on when to pray. Search, read-aloud speech mode, and a calm interface for family, healing, peace, and more.',
+    url: 'https://prayer-intentions.vercel.app/',
+    image: '/images/prayer.webp',
+    alt: 'Prayer Intentions homepage with prayer topics and search',
+    buttonText: 'Explore Prayer Intentions',
+  },
 ];
