@@ -3,7 +3,6 @@ import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import Script from 'next/script'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
-import PrayerChatWidget from '../components/PrayerChatWidget'
 
 
 
@@ -168,7 +167,7 @@ export default function RootLayout({
         />
 
 
-   <PrayerChatWidget /> 
+ 
 
       </body>
     </html>
