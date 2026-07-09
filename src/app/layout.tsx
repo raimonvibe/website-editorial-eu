@@ -84,11 +84,21 @@ export default function RootLayout({
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              window.addEventListener('load', function() {
-                setTimeout(function() {
-                  document.body.classList.remove('is-preload');
-                }, 100);
-              });
+              (function () {
+                function removePreload() {
+                  setTimeout(function () {
+                    document.body.classList.remove('is-preload');
+                  }, 100);
+                }
+                // This script runs after hydration, which can be after the
+                // 'load' event has already fired (e.g. fully cached page),
+                // in which case a 'load' listener would never fire.
+                if (document.readyState === 'complete') {
+                  removePreload();
+                } else {
+                  window.addEventListener('load', removePreload);
+                }
+              })();
             `
           }}
         />

@@ -25,11 +25,19 @@
 	// Stops animations/transitions until the page has ...
 
 		// ... loaded.
-			$window.on('load', function() {
+		// This script is injected after React hydration, which can happen after
+		// the 'load' event has already fired (fully cached page), so a plain
+		// 'load' listener would never fire. Check readyState first.
+			var removePreload = function() {
 				window.setTimeout(function() {
 					$body.removeClass('is-preload');
 				}, 100);
-			});
+			};
+
+			if (document.readyState === 'complete')
+				removePreload();
+			else
+				$window.on('load', removePreload);
 
 		// ... stopped resizing.
 			var resizeTimeout;
@@ -89,18 +97,21 @@
 					.appendTo($head);
 
 		// Toggle.
-			$('<a href="#sidebar" class="toggle">Toggle</a>')
-				.appendTo($sidebar)
-				.on('click', function(event) {
+		// The React Sidebar component may have already injected the toggle;
+		// don't add a second one on top of it.
+			if ($sidebar.find('.toggle').length == 0)
+				$('<a href="#sidebar" class="toggle">Toggle</a>')
+					.appendTo($sidebar)
+					.on('click', function(event) {
 
-					// Prevent default.
-						event.preventDefault();
-						event.stopPropagation();
+						// Prevent default.
+							event.preventDefault();
+							event.stopPropagation();
 
-					// Toggle.
-						$sidebar.toggleClass('inactive');
+						// Toggle.
+							$sidebar.toggleClass('inactive');
 
-				});
+					});
 
 		// Events.
 
@@ -167,7 +178,7 @@
 		// Note: If you do anything to change the height of the sidebar's content, be sure to
 		// trigger 'resize.sidebar-lock' on $window so stuff doesn't get out of sync.
 
-			$window.on('load.sidebar-lock', function() {
+			var initSidebarLock = function() {
 
 				var sh, wh, st;
 
@@ -232,7 +243,12 @@
 					})
 					.trigger('resize.sidebar-lock');
 
-				});
+				};
+
+			if (document.readyState === 'complete')
+				initSidebarLock();
+			else
+				$window.on('load.sidebar-lock', initSidebarLock);
 
 	// Menu.
 		var $menu = $('#menu'),
