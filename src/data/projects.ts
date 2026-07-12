@@ -21,6 +21,15 @@ export const PROJECTS: Project[] = [
    //  alt: 'A serene Christian AI chatbot interface with biblical elements',
    //  buttonText: 'Visit Prayer-Chat'
    // },
+  {
+  id: 'elevenup',
+  title: 'ElevenUp',
+  description: 'A card game against the computer — empty your hand first to win. Simple ranked-ladder rules, single draw pile, and a clean wood-table interface. Free to play, no ads.',
+  url: 'https://www.elevenup.eu/',
+  image: '/images/elevenup.webp',
+  alt: 'ElevenUp card game interface',
+  buttonText: 'Play ElevenUp'
+},
       {
       id: 'change-my-image',
       title: 'Change-My Image Converter',
