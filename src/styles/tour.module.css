@@ -1,0 +1,513 @@
+/*
+  Guided tour — spotlight walkthrough.
+
+  Adapted from assets/css/tour.css in raimonvibe/responsive_web_design, ported to
+  a CSS module for this project.
+
+  Note: the Editorial theme in globals.css styles every `button` and `a` with its
+  own borders, heights and hover colours, several of them via `#main` ID
+  selectors. The rules below reset those explicitly where it matters.
+*/
+
+.tour,
+.launcher {
+  /* Editorial palette — see sass/libs/_vars.scss */
+  --rv-ink: #3d4449;
+  --rv-body: #7f888f;
+  --rv-dim: #9fa3a6;
+  --rv-card: #ffffff;
+  --rv-card-edge: rgba(210, 215, 217, 0.75);
+  --rv-veil: rgba(61, 68, 73, 0.72);
+  --rv-accent: #f56a6a;
+  --rv-accent-hover: #f67878;
+  --rv-accent-active: #f45c5c;
+  --rv-accent-soft: rgba(245, 106, 106, 0.12);
+  --rv-on-accent: #ffffff;
+  font-family: var(--font-open-sans), "Open Sans", Arial, Helvetica, sans-serif;
+}
+
+:global(.dark) .tour,
+:global(.dark) .launcher {
+  --rv-ink: #ffffff;
+  --rv-body: #e5e5e5;
+  --rv-dim: #9fa3a6;
+  --rv-card: #1a1a1a;
+  --rv-card-edge: #333333;
+  --rv-veil: rgba(0, 0, 0, 0.78);
+  --rv-accent-soft: rgba(245, 106, 106, 0.18);
+}
+
+/* Launcher
+------------------------------------------------------------------ */
+
+.launcher {
+  position: fixed;
+  right: 1.25em;
+  bottom: 1.25em;
+  z-index: 15000;
+  display: flex !important;
+  align-items: center;
+  gap: 0.55em;
+  height: auto !important;
+  padding: 0.85em 1.35em 0.85em 1.15em !important;
+  border: 0 !important;
+  border-radius: 0.375em;
+  background: var(--rv-accent) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18) !important;
+  color: var(--rv-on-accent) !important;
+  cursor: pointer;
+  font-family: var(--font-roboto-slab), "Roboto Slab", serif;
+  font-size: 12px !important;
+  font-weight: bold;
+  letter-spacing: 0.075em;
+  line-height: 1 !important;
+  text-align: left;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.launcher:hover {
+  transform: translateY(-2px);
+  background: var(--rv-accent-hover) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.22) !important;
+  color: var(--rv-on-accent) !important;
+}
+
+.launcher:active {
+  background: var(--rv-accent-active) !important;
+  color: var(--rv-on-accent) !important;
+}
+
+.launcher:focus-visible {
+  outline: 2px solid var(--rv-accent);
+  outline-offset: 3px;
+}
+
+.launcher svg {
+  width: 1.35em;
+  height: 1.35em;
+  flex: 0 0 auto;
+  color: var(--rv-on-accent);
+}
+
+.launcherPulse {
+  position: absolute;
+  top: -0.3em;
+  right: -0.3em;
+  width: 0.7em;
+  height: 0.7em;
+  border-radius: 50%;
+  background: var(--rv-on-accent);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  animation: tourPulse 2.4s ease-out infinite;
+}
+
+@keyframes tourPulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.65);
+  }
+  70% {
+    box-shadow: 0 0 0 0.9em rgba(255, 255, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+.launcherHidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media screen and (max-width: 736px) {
+  .launcher {
+    right: 0.9em;
+    bottom: 0.9em;
+    padding: 0.8em 1.1em 0.8em 0.95em;
+    font-size: 11px;
+  }
+}
+
+/* Overlay
+------------------------------------------------------------------ */
+
+.tour {
+  position: fixed;
+  inset: 0;
+  z-index: 20000;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.tourVisible {
+  opacity: 1;
+}
+
+/* Transparent layer that keeps the page itself un-clickable mid-tour. */
+.blocker {
+  position: absolute;
+  inset: 0;
+  cursor: default;
+}
+
+/* Flat dim, used for steps that have no target element. */
+.veil {
+  position: absolute;
+  inset: 0;
+  background: var(--rv-veil);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modeCenter .veil {
+  opacity: 1;
+}
+
+/* Spotlight: the ring is the element, the dim is its box-shadow. */
+.spot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-radius: 10px;
+  box-shadow: 0 0 0 200vmax var(--rv-veil), inset 0 0 0 1px rgba(245, 106, 106, 0.35);
+  outline: 2px solid var(--rv-accent);
+  outline-offset: 3px;
+  pointer-events: none;
+  opacity: 0;
+  transition: top 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    left 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.modeSpot .spot {
+  opacity: 1;
+}
+
+/* First placement: jump straight there instead of growing out of the corner. */
+.spotInstant {
+  transition: none;
+}
+
+/* Card
+------------------------------------------------------------------ */
+
+.card {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: min(24em, calc(100vw - 2.5em));
+  padding: 1.5em 1.6em 1.35em;
+  padding-top: 1.35em;
+  border: 1px solid var(--rv-card-edge);
+  border-radius: 0.375em;
+  background: var(--rv-card);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.18);
+  color: var(--rv-body);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.cardWithCta {
+  width: min(28em, calc(100vw - 2em));
+}
+
+.card:focus {
+  outline: none;
+}
+
+.count {
+  margin: 0 2em 0.5em 0;
+  color: var(--rv-dim);
+  font-size: 0.72em;
+  font-weight: bold;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0 0 0.5em 0;
+  padding: 0 0 0.35em 0;
+  border-bottom: solid 3px var(--rv-accent);
+  color: var(--rv-ink);
+  font-family: var(--font-roboto-slab), "Roboto Slab", serif;
+  font-size: 1.3em;
+  font-weight: bold;
+  letter-spacing: 0.01em;
+  line-height: 1.25;
+}
+
+.body {
+  margin: 0 0 1.2em 0;
+  font-size: 0.95em;
+}
+
+.body p {
+  margin: 0 0 0.7em 0;
+}
+
+.body p:last-child {
+  margin-bottom: 0;
+}
+
+.body strong {
+  color: var(--rv-ink);
+}
+
+/* Progress
+------------------------------------------------------------------ */
+
+.dots {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  margin: 0 0 1.15em 0;
+  padding: 0;
+  list-style: none;
+}
+
+.dots li {
+  padding: 0;
+}
+
+.dots li::before {
+  display: none;
+}
+
+.dot {
+  display: block;
+  width: 0.5em;
+  height: 0.5em;
+  border-radius: 50%;
+  background: var(--rv-card-edge);
+  transition: background-color 0.25s ease, transform 0.25s ease;
+}
+
+.dotDone {
+  background: rgba(245, 106, 106, 0.45);
+}
+
+.dotCurrent {
+  background: var(--rv-accent);
+  transform: scale(1.5);
+}
+
+/* Navigation
+------------------------------------------------------------------ */
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.navTop {
+  display: flex;
+}
+
+.navCta {
+  display: flex;
+}
+
+.navActions {
+  display: flex;
+  gap: 0.5em;
+}
+
+.navWithCta {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.65em;
+  padding-top: 0.75em;
+  border-top: 1px solid var(--rv-card-edge);
+}
+
+.navWithCta .quiet {
+  padding-left: 0 !important;
+}
+
+.navWithCta .navActions > :only-child {
+  margin-left: auto;
+  max-width: 12em;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.tour button,
+.tour .ctaLink {
+  appearance: none;
+  -webkit-appearance: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: auto;
+  min-height: 2.65em;
+  margin: 0;
+  padding: 0.7em 1.1em;
+  border: 0;
+  border-radius: 0.375em;
+  box-shadow: inset 0 0 0 2px var(--rv-accent);
+  background: transparent;
+  color: var(--rv-accent);
+  cursor: pointer;
+  font-family: var(--font-roboto-slab), "Roboto Slab", serif;
+  font-size: 0.75em;
+  font-weight: bold;
+  letter-spacing: 0.075em;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+.navWithCta .ctaLink {
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 2.85em;
+  padding: 0.85em 1em;
+}
+
+.navWithCta .navActions button {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.nextSecondary {
+  box-shadow: inset 0 0 0 2px var(--rv-accent) !important;
+  background: transparent !important;
+  color: var(--rv-accent) !important;
+}
+
+.nextSecondary:hover {
+  background: var(--rv-accent-soft) !important;
+}
+
+.tour button:hover,
+.tour .ctaLink:hover {
+  background: var(--rv-accent-soft);
+}
+
+.tour button:focus-visible,
+.tour .ctaLink:focus-visible {
+  outline: 2px solid var(--rv-accent);
+  outline-offset: 2px;
+}
+
+.tour button[disabled] {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.primary {
+  box-shadow: none !important;
+  background: var(--rv-accent) !important;
+  color: var(--rv-on-accent) !important;
+}
+
+.primary:hover {
+  background: var(--rv-accent-hover) !important;
+}
+
+.primary:active {
+  background: var(--rv-accent-active) !important;
+}
+
+.quiet {
+  padding-left: 0 !important;
+  padding-right: 0.4em !important;
+  box-shadow: none !important;
+  color: var(--rv-dim) !important;
+  letter-spacing: 0.075em;
+}
+
+.quiet:hover {
+  background: transparent !important;
+  color: var(--rv-ink) !important;
+}
+
+.close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  width: 2em;
+  height: 2em !important;
+  padding: 0 !important;
+  box-shadow: none !important;
+  border-radius: 50% !important;
+  color: var(--rv-dim) !important;
+  font-size: 1em !important;
+  letter-spacing: 0 !important;
+}
+
+.close:hover {
+  background: transparent !important;
+  color: var(--rv-ink) !important;
+}
+
+/* Small screens: dock the card to the bottom as a sheet.
+------------------------------------------------------------------ */
+
+@media screen and (max-width: 736px) {
+  .card,
+  .cardWithCta {
+    top: auto !important;
+    right: 0.75em;
+    bottom: 0.75em;
+    left: 0.75em !important;
+    width: auto;
+    max-width: none;
+    padding: 1.25em 1.15em 1.1em;
+    font-size: 14px;
+  }
+
+  .nav:not(.navWithCta) {
+    flex-wrap: wrap;
+  }
+
+  .nav:not(.navWithCta) button {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .nav:not(.navWithCta) .quiet {
+    flex: 0 0 auto;
+  }
+
+  .navWithCta .navActions {
+    flex-direction: column;
+  }
+
+  .navWithCta .navActions > :only-child {
+    max-width: none;
+  }
+
+  .navWithCta .navActions button,
+  .navWithCta .ctaLink {
+    width: 100%;
+  }
+}
+
+/* Reduced motion
+------------------------------------------------------------------ */
+
+@media (prefers-reduced-motion: reduce) {
+  .tour,
+  .spot,
+  .card,
+  .veil,
+  .dot,
+  .launcher {
+    transition: none !important;
+  }
+
+  .launcherPulse {
+    animation: none;
+  }
+}

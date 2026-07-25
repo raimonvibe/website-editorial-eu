@@ -84,7 +84,7 @@ export default function Services() {
 
 <hr className="major" />
 
-
+            <div id="commercial-site">
 <span className="image main">
   <Image
     src="/images/website.jpg"
@@ -113,6 +113,7 @@ export default function Services() {
                 raimonvibe.com
               </a>
             </strong>
+            </div>
 
           </section>
         </div>

@@ -3,6 +3,7 @@ import { Open_Sans, Roboto_Slab } from 'next/font/google'
 import Script from 'next/script'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
+import GuidedTour from '@/components/GuidedTour'
 
 
 
@@ -78,6 +79,7 @@ export default function RootLayout({
       <body className={`${openSans.variable} ${robotoSlab.variable} is-preload dark:bg-gray-900 dark:text-gray-100`}>
         <ThemeProvider>
           {children}
+          <GuidedTour />
         </ThemeProvider>
         <Script
           id="remove-preload-class"
