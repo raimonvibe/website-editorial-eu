@@ -1170,19 +1170,23 @@ input[type="radio"] + label:before {
   border-radius: 100%; }
 
 ::-webkit-input-placeholder {
-  color: #9fa3a6 !important;
+  color: #7f888f !important;
   opacity: 1.0; }
 
 :-moz-placeholder {
-  color: #9fa3a6 !important;
+  color: #7f888f !important;
   opacity: 1.0; }
 
 ::-moz-placeholder {
-  color: #9fa3a6 !important;
+  color: #7f888f !important;
   opacity: 1.0; }
 
 :-ms-input-placeholder {
-  color: #9fa3a6 !important;
+  color: #7f888f !important;
+  opacity: 1.0; }
+
+::placeholder {
+  color: #7f888f !important;
   opacity: 1.0; }
 
 /* Box */
@@ -2398,6 +2402,50 @@ button,
   background-color: #1a1a1a !important;
   border-bottom-color: #333333;
 }
+
+.dark input[type="text"],
+.dark input[type="password"],
+.dark input[type="email"],
+.dark input[type="tel"],
+.dark input[type="search"],
+.dark input[type="url"],
+.dark select,
+.dark textarea {
+  background: #1a1a1a !important;
+  border-color: #333333;
+  color: #ffffff !important;
+}
+
+.dark input[type="text"]:focus,
+.dark input[type="password"]:focus,
+.dark input[type="email"]:focus,
+.dark input[type="tel"]:focus,
+.dark input[type="search"]:focus,
+.dark input[type="url"]:focus,
+.dark select:focus,
+.dark textarea:focus {
+  border-color: #f56a6a;
+}
+
+.dark ::-webkit-input-placeholder {
+  color: #b0b4b8 !important;
+  opacity: 1.0; }
+
+.dark :-moz-placeholder {
+  color: #b0b4b8 !important;
+  opacity: 1.0; }
+
+.dark ::-moz-placeholder {
+  color: #b0b4b8 !important;
+  opacity: 1.0; }
+
+.dark :-ms-input-placeholder {
+  color: #b0b4b8 !important;
+  opacity: 1.0; }
+
+.dark ::placeholder {
+  color: #b0b4b8 !important;
+  opacity: 1.0; }
 
 .dark #search form input[type="text"] {
   background: #1a1a1a !important;

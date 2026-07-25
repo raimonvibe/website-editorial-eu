@@ -159,21 +159,66 @@
 	}
 
 	::-webkit-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg) !important;
 		opacity: 1.0;
 	}
 
 	:-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg) !important;
 		opacity: 1.0;
 	}
 
 	::-moz-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg) !important;
 		opacity: 1.0;
 	}
 
 	:-ms-input-placeholder {
-		color: _palette(fg-light) !important;
+		color: _palette(fg) !important;
 		opacity: 1.0;
+	}
+
+	::placeholder {
+		color: _palette(fg) !important;
+		opacity: 1.0;
+	}
+
+	.dark {
+		input[type="text"],
+		input[type="password"],
+		input[type="email"],
+		input[type="tel"],
+		input[type="search"],
+		input[type="url"],
+		select,
+		textarea {
+			background: #1a1a1a !important;
+			border-color: #333333;
+			color: #ffffff !important;
+		}
+
+		::-webkit-input-placeholder {
+			color: #b0b4b8 !important;
+			opacity: 1.0;
+		}
+
+		:-moz-placeholder {
+			color: #b0b4b8 !important;
+			opacity: 1.0;
+		}
+
+		::-moz-placeholder {
+			color: #b0b4b8 !important;
+			opacity: 1.0;
+		}
+
+		:-ms-input-placeholder {
+			color: #b0b4b8 !important;
+			opacity: 1.0;
+		}
+
+		::placeholder {
+			color: #b0b4b8 !important;
+			opacity: 1.0;
+		}
 	}
