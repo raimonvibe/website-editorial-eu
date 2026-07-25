@@ -1,7 +1,8 @@
 (function($) {
 
 	/**
-	 * CodeQL js/unsafe-jquery-plugin: named guards recognized as sanitizers.
+	 * Type guards for resolving plugin "target" options without ever
+	 * passing the (possibly attacker-controlled) value into $().
 	 */
 	function isElement(value) {
 		return !!(value && value.nodeType === 1);
@@ -81,6 +82,7 @@
 			var	$this = $(this),
 				$body = $('body'),
 				$window = $(window),
+				$document = $(document),
 				id = $this.attr('id'),
 				config;
 
@@ -122,8 +124,10 @@
 
 				if (isElement(target))
 					config.target = jQueryFromElement(target);
-				else if (isWindow(target) || isDocument(target))
-					config.target = $(target);
+				else if (isWindow(target))
+					config.target = $window;
+				else if (isDocument(target))
+					config.target = $document;
 				else if (typeof target === 'string') {
 					var targetStr = target.trim();
 					var targetElement = null;

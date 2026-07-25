@@ -154,6 +154,15 @@ export const PROJECTS: Project[] = [
     buttonText: 'Visit Rootwork'
   },
   {
+    id: 'beautiful-words',
+    title: 'Beautiful Words',
+    description: 'A lexicon of lovely language — rare, rich words explained the way a friend would explain them, not a dictionary. Browse by category, favorite the ones you love, or let a word of the day surprise you.',
+    url: 'https://beautiful-words.vercel.app/',
+    image: '/images/words.webp',
+    alt: 'Beautiful Words lexicon interface showing a word of the day',
+    buttonText: 'Visit Beautiful Words'
+  },
+  {
     id: 'google-login-edu',
     title: 'Google Login EDU',
     description: 'An authentication system tailored for educational platforms, offering secure, streamlined access through Google accounts.',
