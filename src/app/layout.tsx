@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { Open_Sans, Roboto_Slab } from 'next/font/google'
+import localFont from 'next/font/local'
 import Script from 'next/script'
 import '../styles/globals.css'
 import { ThemeProvider } from '@/contexts/ThemeContext'
@@ -7,17 +7,24 @@ import GuidedTour from '@/components/GuidedTour'
 
 
 
-const openSans = Open_Sans({ 
-  subsets: ['latin'],
-  weight: ['400', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-open-sans'
+const openSans = localFont({
+  src: [
+    { path: '../fonts/open-sans-400-normal.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/open-sans-600-normal.woff2', weight: '600', style: 'normal' },
+    { path: '../fonts/open-sans-400-italic.woff2', weight: '400', style: 'italic' },
+    { path: '../fonts/open-sans-600-italic.woff2', weight: '600', style: 'italic' },
+  ],
+  variable: '--font-open-sans',
+  display: 'swap',
 })
 
-const robotoSlab = Roboto_Slab({
-  subsets: ['latin'], 
-  weight: ['400', '700'],
-  variable: '--font-roboto-slab'
+const robotoSlab = localFont({
+  src: [
+    { path: '../fonts/roboto-slab-400-normal.woff2', weight: '400', style: 'normal' },
+    { path: '../fonts/roboto-slab-700-normal.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-roboto-slab',
+  display: 'swap',
 })
 
 export const metadata: Metadata = {
