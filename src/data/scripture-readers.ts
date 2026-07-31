@@ -45,7 +45,7 @@ export const SCRIPTURE_READERS: ScriptureReader[] = [
     description:
       'Explore the Bible’s miracles, passage by passage. Read the complete Old and New Testament from the World English Bible in a beautiful, modern interface with search.',
     url: 'https://bible-wonders-seven.vercel.app/',
-    image: '/images/bible-wonders.webp',
+    image: '/images/wonders.webp',
     alt: 'An open Bible glowing with light on its pages',
     buttonText: 'Explore Bible Wonders',
   },
