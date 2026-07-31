@@ -40,6 +40,16 @@ export const SCRIPTURE_READERS: ScriptureReader[] = [
     buttonText: 'Read Bible Stories',
   },
   {
+    id: 'bible-wonders',
+    title: 'Wonders and Hope',
+    description:
+      'Explore the Bible’s miracles, passage by passage. Read the complete Old and New Testament from the World English Bible in a beautiful, modern interface with search.',
+    url: 'https://bible-wonders-seven.vercel.app/',
+    image: '/images/bible-wonders.webp',
+    alt: 'An open Bible glowing with light on its pages',
+    buttonText: 'Explore Bible Wonders',
+  },
+  {
     id: 'book-of-mormon',
     title: 'Book of Mormon Reader',
     description:
