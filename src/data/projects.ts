@@ -39,6 +39,15 @@ export const PROJECTS: Project[] = [
       alt: 'Change-My Image Converter interface',
       buttonText: 'Visit Change-My.com'
     },
+{
+  id: 'digital-marketing-course',
+  title: 'Digital Marketing & E-commerce',
+  description: 'A self-built, browser-only course with 11 modules and 15 real tools. Hands-on missions on free tiers (SEO, email, Canva, Shopify, Analytics & more), quizzes, and local progress tracking. No account, no ads — just learn by doing.',
+  url: 'https://digital-marketing-ten-snowy.vercel.app/en/',
+  image: '/images/marketing.webp',
+  alt: 'Digital Marketing & E-commerce course interface',
+  buttonText: 'Start the Course'
+},
    {
      id: 'skills-hub',
      title: 'Recommended Stack',
