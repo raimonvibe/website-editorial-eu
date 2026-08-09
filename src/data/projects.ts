@@ -57,6 +57,15 @@ export const PROJECTS: Project[] = [
      alt: 'A serene setup with a developer exploring technology stacks',
      buttonText: 'Visit SkillsHub'
   },
+{
+  id: 'taskflow',
+  title: 'TaskFlow',
+  description: 'A full-stack task management app with JWT auth, CRUD tasks, and a dashboard of visual stats. Built as a complete DevOps learning project (React + Node/Express + PostgreSQL) covering Docker, Kubernetes, Terraform, CI/CD and monitoring — all free-tier friendly.',
+  url: 'https://taskflow-frontend-a4e8.onrender.com/',
+  image: '/images/taskflow.webp',
+  alt: 'TaskFlow task management dashboard',
+  buttonText: 'Open TaskFlow'
+},
   {
     id: 'physics-calculator',
     title: 'Speed Calculation',
