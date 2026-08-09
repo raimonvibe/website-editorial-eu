@@ -30,6 +30,15 @@ export const PROJECTS: Project[] = [
   alt: '3D live Amsterdam metro map with real-time trains',
   buttonText: 'Open Amsterdam Metro Live'
 },
+{
+  id: 'courses-free-with-certificate',
+  title: 'Free Courses with Certificates',
+  description: 'A curated collection of 34 completely free software development courses that issue certificates on completion. Organized by topic (Frontend, Backend, Security, Data Science, Cloud, DevOps, ML/AI and more) from freeCodeCamp, Microsoft Learn, AWS and others.',
+  url: 'https://courses-free-with-certificate.vercel.app/',
+  image: '/images/courses.webp',
+  alt: 'Free software development courses with certificates collection',
+  buttonText: 'Browse Free Courses'
+},
   {
   id: 'elevenup',
   title: 'ElevenUp',
