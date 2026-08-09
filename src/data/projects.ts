@@ -21,6 +21,15 @@ export const PROJECTS: Project[] = [
    //  alt: 'A serene Christian AI chatbot interface with biblical elements',
    //  buttonText: 'Visit Prayer-Chat'
    // },
+{
+  id: 'amsterdammetro',
+  title: 'Amsterdam Metro Live',
+  description: 'A 3D, orbitable live map of Amsterdam’s GVB metro. Real trains move on real track geometry using GTFS-realtime data, with live delays, station departure boards, clickable trains, motion trails, and dark/light themes.',
+  url: 'https://amsterdammetro.nl/',
+  image: '/images/amsterdammetro.webp',
+  alt: '3D live Amsterdam metro map with real-time trains',
+  buttonText: 'Open Amsterdam Metro Live'
+},
   {
   id: 'elevenup',
   title: 'ElevenUp',
