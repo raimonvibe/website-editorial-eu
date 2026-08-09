@@ -94,7 +94,7 @@ export const SCRIPTURE_READERS: ScriptureReader[] = [
   title: 'Monk Guidelines',
   description: 'A clean digital edition of the Rule of Saint Benedict — the classic guidelines for Christian monks. Browse the full Prologue and all 73 chapters, with a “Today’s reading” feature for daily reflection.',
   url: 'https://monk-guidelines.vercel.app/',
-  image: '/images/monk-guidelines.webp',
+  image: '/images/monk.webp',
   alt: 'Rule of Saint Benedict digital guidelines for Christian monks',
   buttonText: 'Read the Rule'
 }
