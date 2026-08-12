@@ -9,3 +9,8 @@ updates:
     directory: "/"
     schedule:
       interval: "daily"
+    ignore:
+      # TypeScript 6+/7 break Next.js 16 builds (missing compiler API).
+      # Keep pinned on 5.9.x until the stack is ready.
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
