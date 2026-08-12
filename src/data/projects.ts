@@ -31,6 +31,15 @@ export const PROJECTS: Project[] = [
   buttonText: 'Open Amsterdam Metro Live'
 },
 {
+  id: 'aramigo',
+  title: 'AramiGo',
+  description: 'Beginner-friendly Classical Syriac Aramaic learning web app. Short scene-based lessons, script-first approach, word chips, listen mode (Hebrew system voice as stand-in), guest + Google sign-in progress sync. Built with Next.js + Spring Boot.',
+  url: 'https://troubigue.com/',
+  image: '/images/aramigo.webp',
+  alt: 'AramiGo Classical Syriac beginners learning path with Greetings lesson',
+  buttonText: 'Open AramiGo'
+},
+{
   id: 'courses-free-with-certificate',
   title: 'Free Courses with Certificates',
   description: 'A curated collection of 34 completely free software development courses that issue certificates on completion. Organized by topic (Frontend, Backend, Security, Data Science, Cloud, DevOps, ML/AI and more) from freeCodeCamp, Microsoft Learn, AWS and others.',
