@@ -34,7 +34,7 @@ export const PROJECTS: Project[] = [
   id: 'aramigo',
   title: 'AramiGo',
   description: 'Beginner-friendly Classical Syriac Aramaic learning web app. Short scene-based lessons, script-first approach, word chips, listen mode (Hebrew system voice as stand-in), guest + Google sign-in progress sync. Built with Next.js + Spring Boot.',
-  url: 'https://troubigue.com/',
+  url: 'https://aramaic.eu/',
   image: '/images/aramigo.webp',
   alt: 'AramiGo Classical Syriac beginners learning path with Greetings lesson',
   buttonText: 'Open AramiGo'
