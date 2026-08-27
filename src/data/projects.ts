@@ -31,6 +31,15 @@ export const PROJECTS: Project[] = [
   buttonText: 'Open Amsterdam Metro Live'
 },
 {
+id: 'wondersandhope',
+title: 'Wonders and Hope',
+description: 'An offline Bible app of 178 wonders and miracles, each with its passage beside the card. Read or listen with highlighted scrolling text, keep verses with colour and notes, share quote images, and browse the full World English Bible — no account, no ads, no tracking.',
+url: 'https://play.google.com/store/apps/details?id=com.raimonvibe.wonders',
+image: '/images/wondersandhope.webp',
+alt: 'Wonders and Hope Bible app with miracle cards and highlighted scripture',
+buttonText: 'Open Wonders and Hope'
+},
+{
   id: 'aramigo',
   title: 'AramiGo',
   description: 'Beginner-friendly Classical Syriac Aramaic learning web app. Short scene-based lessons, script-first approach, word chips, listen mode (Hebrew system voice as stand-in), guest + Google sign-in progress sync. Built with Next.js + Spring Boot.',
