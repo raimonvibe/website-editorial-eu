@@ -148,6 +148,9 @@ export default function PrivacyNotice() {
               <li>
                 <a href="/apps/wonders-and-hope/privacy">Wonders and Hope privacy policy</a>
               </li>
+              <li>
+                <a href="/apps/gloss/privacy">Gloss privacy policy</a>
+              </li>
             </ul>
           </section>
         </div>

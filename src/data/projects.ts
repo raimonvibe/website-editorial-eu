@@ -43,6 +43,18 @@ export const PROJECTS: Project[] = [
   siteButtonText: 'App info & privacy',
 },
 {
+  id: 'gloss',
+  title: 'Gloss: Beautiful Words',
+  description:
+    'A lexicon of lovely language: 134 rare English words with plain-language explanations, etymology, read aloud, and a little quiz — no account, no ads, no tracking.',
+  url: 'https://play.google.com/store/apps/details?id=com.raimonvibe.beautiful_words',
+  image: '/images/gloss.png',
+  alt: 'Gloss — a lexicon of lovely language',
+  buttonText: 'Get it on Play Store',
+  siteUrl: '/apps/gloss',
+  siteButtonText: 'App info & privacy',
+},
+{
   id: 'aramigo',
   title: 'AramiGo',
   description: 'Beginner-friendly Classical Syriac Aramaic learning web app. Short scene-based lessons, script-first approach, word chips, listen mode (Hebrew system voice as stand-in), guest + Google sign-in progress sync. Built with Next.js + Spring Boot.',
