@@ -9,6 +9,6 @@ export const GLOSS = {
   privacyPath: '/apps/gloss/privacy',
   supportEmail: 'info@raimonvibe.com',
   publisher: 'RaimonVibe',
-  lastUpdated: '28 August 2026',
+  lastUpdated: '2 September 2026',
   wordCount: 134,
 } as const

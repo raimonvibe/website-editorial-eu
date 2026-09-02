@@ -8,7 +8,7 @@ import { GLOSS } from '@/data/gloss'
 export const metadata: Metadata = {
   title: 'Privacy Policy — Gloss - Raimonvibe',
   description:
-    'Privacy policy for the Gloss Android app (Beautiful Words). Free, ad-free, no account, local saved words only.',
+    'Privacy policy for the Gloss Android app (Beautiful Words). Free, ad-free, no account; saved words stay on your device, and only the contact form sends anything.',
   openGraph: {
     title: 'Privacy Policy — Gloss',
     description: 'How Gloss handles your information on Android.',
