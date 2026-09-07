@@ -48,21 +48,21 @@ export default function Home() {
               <article>
                 <span className="icon icon-gem"></span>
                 <div className="content">
-                  <h3>Technological Impact</h3>
+                  <h3>Data Science and AI</h3>
                   <p>Delving into Data Science and Data Visualization has allowed me to transform complex datasets into clear, insightful visual reports. Learning to program AI with TensorFlow has opened up new possibilities to develop concepts for customized AI solutions that support intelligent, data-driven decision-making.</p>
                 </div>
               </article>
               <article>
                 <span className="icon icon-paper-plane"></span>
                 <div className="content">
-                  <h3>Technological Impact</h3>
+                  <h3>Growth Beyond Code</h3>
                   <p>It's amazing how these experiences not only advance my professional skills but also enhance my problem-solving abilities in everyday life. Sometimes discipline is more present on some days than others, and that's okay.</p>
                 </div>
               </article>
               <article>
                 <span className="icon icon-rocket"></span>
                 <div className="content">
-                  <h3>Technological Impact</h3>
+                  <h3>Infrastructure Research</h3>
                   <p>At RaimonVibe, I'm not just focused on developing technology but also on understanding and innovating it. I've extended my research initiatives to include modern server technologies like VPS (Virtual Private Servers) to host robust, scalable applications that are accessible worldwide.</p>
                 </div>
               </article>
