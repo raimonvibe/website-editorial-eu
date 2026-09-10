@@ -11,12 +11,12 @@ export interface ScriptureReader {
 export const SCRIPTURE_READERS: ScriptureReader[] = [
 
 {
+{
   id: 'what-jesus-said',
   title: 'What Jesus Said',
   description:
     'Explore 540 sayings of Jesus from the New Testament in the World English Bible. A focused, beautiful reader designed to dive deep into the words and teachings of Jesus with full-text search.',
   url: 'https://what-jesus-said.vercel.app/',
-  github: 'https://github.com/raimonvibe/what-Jesus-said',
   image: '/images/what-jesus-said.webp',
   alt: 'What Jesus Said reader featuring 540 New Testament sayings',
   buttonText: 'Explore Jesus\'s Words',
