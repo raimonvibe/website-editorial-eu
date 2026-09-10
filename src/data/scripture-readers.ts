@@ -11,7 +11,6 @@ export interface ScriptureReader {
 export const SCRIPTURE_READERS: ScriptureReader[] = [
 
 {
-{
   id: 'what-jesus-said',
   title: 'What Jesus Said',
   description:
