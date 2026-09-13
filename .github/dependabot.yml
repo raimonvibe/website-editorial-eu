@@ -14,3 +14,4 @@ updates:
       # Keep pinned on 5.9.x until the stack is ready.
       - dependency-name: "typescript"
         update-types: ["version-update:semver-major"]
+
