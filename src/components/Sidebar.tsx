@@ -72,6 +72,39 @@ export default function Sidebar() {
             <li><Link href="/">Homepage</Link></li>
             <li><Link href="/services">Services</Link></li>
             <li><Link href="/certificates">Certificates</Link></li>
+            <li><Link href="/projects">Projects</Link></li>
+            <li><Link href="/scripture-readers">Scripture Readers</Link></li>
+            <li><Link href="/nigeria">Nigeria</Link></li>
+            <li>
+              <span
+                className={`opener ${openDropdowns.has('links') ? 'active' : ''}`}
+                onClick={() => handleDropdownToggle('links')}
+                style={{ cursor: 'pointer' }}
+              >
+                Open a site
+              </span>
+              <ul>
+                <li><a href="https://amsterdammetro.nl/" target="_blank" rel="noopener noreferrer">Amsterdam Metro Live</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.raimonvibe.wonders" target="_blank" rel="noopener noreferrer">Wonders and Hope</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.raimonvibe.beautiful_words" target="_blank" rel="noopener noreferrer">Gloss: Beautiful Words</a></li>
+                <li><a href="https://aramaic.eu/" target="_blank" rel="noopener noreferrer">AramiGo</a></li>
+                <li><a href="https://courses-free-with-certificate.vercel.app/" target="_blank" rel="noopener noreferrer">Free Courses with Certificates</a></li>
+                <li><a href="https://www.elevenup.eu/" target="_blank" rel="noopener noreferrer">ElevenUp</a></li>
+                <li><a href="https://www.change-my.com/" target="_blank" rel="noopener noreferrer">Change-My Image Converter</a></li>
+                <li><a href="https://digital-marketing-ten-snowy.vercel.app/en" target="_blank" rel="noopener noreferrer">Digital Marketing &amp; E-commerce</a></li>
+                <li><a href="https://taskflow-frontend-a4e8.onrender.com/" target="_blank" rel="noopener noreferrer">TaskFlow</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.raimonvibe.animalguesses2" target="_blank" rel="noopener noreferrer">Animal Guesses</a></li>
+                <li><a href="https://play.google.com/store/apps/details?id=com.raimonvibe.musicguesses" target="_blank" rel="noopener noreferrer">Music Guesses</a></li>
+                <li><a href="https://rootwork-teal.vercel.app/" target="_blank" rel="noopener noreferrer">Rootwork</a></li>
+                <li><a href="https://tanach.vercel.app/" target="_blank" rel="noopener noreferrer">Tanach Reader</a></li>
+                <li><a href="https://what-jesus-said.vercel.app/" target="_blank" rel="noopener noreferrer">What Jesus Said</a></li>
+                <li><a href="https://bible-old-and-new-testament.vercel.app/" target="_blank" rel="noopener noreferrer">Old and New Testament Bible</a></li>
+                <li><a href="https://first-century-medicine.vercel.app/" target="_blank" rel="noopener noreferrer">Medicine in the Times of Jesus</a></li>
+                <li><a href="https://book-of-mormon-tan.vercel.app/" target="_blank" rel="noopener noreferrer">Book of Mormon</a></li>
+                <li><a href="https://prayer-intentions.vercel.app/" target="_blank" rel="noopener noreferrer">Prayer Intentions</a></li>
+                <li><a href="https://monk-guidelines.vercel.app/" target="_blank" rel="noopener noreferrer">Monk Guidelines</a></li>
+              </ul>
+            </li>
             <li>
               <span 
                 className={`opener ${openDropdowns.has('more') ? 'active' : ''}`}
@@ -85,37 +118,10 @@ export default function Sidebar() {
                 <li><Link href="/opportunities">Opportunities</Link></li>
                 <li><Link href="/clients">Clients</Link></li>
                 <li><Link href="/models">3D Models</Link></li>
-                <li><Link href="/projects">Projects</Link></li>
-                <li><Link href="/scripture-readers">Scripture Readers</Link></li>
-                <li><Link href="/nigeria">Nigeria</Link></li>
               </ul>
             </li>
             <li><Link href="/resume">Resume</Link></li>
             <li><Link href="/contact">Contact</Link></li>
-            <li>
-              <span 
-                className={`opener ${openDropdowns.has('projects') ? 'active' : ''}`}
-                onClick={() => handleDropdownToggle('projects')}
-                style={{ cursor: 'pointer' }}
-              >
-                My projects
-              </span>
-              <ul>
-                <li><a href="https://raimon.pythonanywhere.com/" target="_blank">SkillsHub</a></li>
-                {/* <li><a href="https://code-review.raimonvibe.com/" target="_blank">Code Review</a></li> */}
-                <li><a href="https://www.physics-calculator.raimonvibe.com/" target="_blank">Velocity Calculator</a></li>
-                <li><a href="https://www.physics-flashcards.raimonvibe.com/" target="_blank">Physics Flascards</a></li>
-                <li><a href="https://retro-monitor.raimonvibe.com/" target="_blank">Retro Monitor</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.raimonvibe.animalguesses2" target="_blank">Animal Guesses</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.raimonvibe.wonders" target="_blank">Wonders and Hope</a></li>
-                <li><a href="https://play.google.com/store/apps/details?id=com.raimonvibe.beautiful_words" target="_blank">Gloss</a></li>
-                <li><a href="https://www.emf-simulator.raimonvibe.com/" target="_blank">EMF-Simulator</a></li>
-                <li><a href="https://tetris2.0.raimonvibe.com/" target="_blank">Tetris 2.0</a></li>
-                <li><a href="https://periodic-table.raimonvibe.com/" target="_blank">The Periodic Table</a></li>
-                {/* <li><a href="https://inventory-pro.raimonvibe.com/" target="_blank">Inventory Pro</a></li> */}
-                <li><a href="https://google-login-edu.raimonvibe.com/" target="_blank">Google Login EDU</a></li>
-              </ul>
-            </li>
             <li><Link href="/legalnotice">Legalnotice</Link></li>
             <li><Link href="/privacynotice">Privacynotice</Link></li>
           </ul>
