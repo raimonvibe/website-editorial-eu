@@ -9,7 +9,16 @@ export interface ScriptureReader {
 }
 
 export const SCRIPTURE_READERS: ScriptureReader[] = [
-
+{
+  id: 'first-century-medicine',
+  title: 'Medicine in the Time of Jesus',
+  description:
+    'Discover how people healed in the first-century Mediterranean world. Explore physicians, the four humors, healing in Judea, an interactive filterable herbal, ten reconstructed cases, a timeline, and more. History only, not medical advice.',
+  url: 'https://first-century-medicine.vercel.app/',
+  image: '/images/medicine.webp',
+  alt: 'Medicine in the Time of Jesus: first-century treatments, herbs, and healing',
+  buttonText: 'Explore Ancient Medicine',
+},
 {
   id: 'what-jesus-said',
   title: 'What Jesus Said',
