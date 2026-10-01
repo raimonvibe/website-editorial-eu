@@ -48,7 +48,7 @@ export const PROJECTS: Project[] = [
   description:
     'A lexicon of lovely language: 134 rare English words with plain-language explanations, etymology, read aloud, and a little quiz — no account, no ads, no tracking.',
   url: 'https://play.google.com/store/apps/details?id=com.raimonvibe.beautiful_words',
-  image: '/images/gloss.png',
+  image: '/images/gloss.webp',
   alt: 'Gloss — a lexicon of lovely language',
   buttonText: 'Get it on Play Store',
   siteUrl: '/apps/gloss',
