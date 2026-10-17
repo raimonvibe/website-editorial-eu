@@ -31,7 +31,7 @@
     "autoprefixer": "^10.6.1",
     "eslint": "^10",
     "eslint-config-next": "^16.4.0",
-    "postcss": "^8.5.28",
+    "postcss": "^8.5.30",
     "tailwindcss": "^4.3.3",
     "typescript": "5.9.3"
   },
@@ -40,8 +40,8 @@
     "brace-expansion": "^5.0.12",
     "browserslist": ">=4.28.7",
     "nanoid": "^3.3.18",
-    "postcss": "^8.5.28",
+    "postcss": "$postcss",
     "sharp": "0.35.5",
-    "typescript": "5.9.3"
+    "typescript": "$typescript"
   }
 }
