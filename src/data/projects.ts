@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
   title: 'Amsterdam Metro Live',
   description: 'A 3D, orbitable live map of Amsterdam’s GVB metro. Real trains move on real track geometry using GTFS-realtime data, with live delays, station departure boards, clickable trains, motion trails, and dark/light themes.',
   url: 'https://amsterdammetro.nl/',
-  image: '/images/amsterdammetro.webp',
+  image: '/images/amsterdammetro2.webp',
   alt: '3D live Amsterdam metro map with real-time trains',
   buttonText: 'Open Amsterdam Metro Live'
 },
