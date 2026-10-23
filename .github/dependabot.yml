@@ -9,7 +9,8 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      day: "saturday"
     ignore:
       # TypeScript 6+/7 break Next.js 16 builds (missing compiler API).
       # Keep pinned on 5.9.x until the stack is ready.
@@ -19,4 +20,4 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
-      day: "monday"
+      day: "saturday"
