@@ -17,7 +17,7 @@
     "flatted": "^3.4.4",
     "immutable": "^5.1.9",
     "jquery": "^4.0.0",
-    "minimatch": "^10.2.6",
+    "minimatch": "^11.0.2",
     "next": "^16.4.3",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
