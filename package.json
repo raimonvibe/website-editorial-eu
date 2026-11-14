@@ -15,10 +15,10 @@
     "@fortawesome/react-fontawesome": "^3.5.0",
     "@types/jquery": "^4.0.1",
     "flatted": "^3.4.4",
-    "immutable": "^5.1.9",
+    "immutable": "^5.1.10",
     "jquery": "^4.0.0",
-    "minimatch": "^11.0.5",
-    "next": "^16.4.5",
+    "minimatch": "^11.0.7",
+    "next": "^16.4.6",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "sass": "^1.108.1"
@@ -30,7 +30,7 @@
     "@types/react-dom": "^19",
     "autoprefixer": "^10.6.2",
     "eslint": "^10",
-    "eslint-config-next": "^16.4.5",
+    "eslint-config-next": "^16.4.6",
     "postcss": "^8.5.32",
     "tailwindcss": "^4.3.4",
     "typescript": "5.9.3"
